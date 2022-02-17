@@ -11,7 +11,7 @@ Right here! -> https://horuhe.dev
 
 #### Where did you get the appleish style from?
 
-All of the apple componentes where taken from Puppertino (https://codedgar.github.io/Puppertino/)
+All of the apple elements where taken from Puppertino (https://codedgar.github.io/Puppertino/)
 
 
 ## License
