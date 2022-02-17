@@ -34,18 +34,18 @@ function Card() {
       <h1 class="">Jorge Plasencia</h1>
       <p class="p-silver-500">C.S. Student & Web Developer</p>
       <a href={CV} download="CV_JorgePlasencia" target='_blank'>
-        <button class="p-btn p-prim-col p-btn-sm btn-high">Download CV</button>
+        <button class="p-btn p-prim-col p-btn-sm btn-high ">Download CV</button>
       </a>
       <div class="btn-group"> 
-        <button onClick={clickGit} class="p-btn">
+        <button onClick={clickGit} class="p-btn p">
           <span class="icon-social-github" />
           ㅤGitHub
         </button>
-        <button onClick={clickLinked} class="p-btn">
+        <button onClick={clickLinked} class="p-btn p ">
             <span class="icon-social-linkedin"/>
             ㅤLinkedIn
         </button>
-        <button onClick={clickTwitter} class="p-btn">
+        <button onClick={clickTwitter} class="p-btn p">
             <span class="icon-social-twitter"/>
             ㅤTwitter
         </button>
