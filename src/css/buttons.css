@@ -187,3 +187,13 @@
   margin-top: -20%;
   margin-bottom: 10%;
 }
+
+@media (min-width: 300px) and (max-width: 900px){
+  .btn-group button {
+    display: block;
+    margin: 5% auto;
+    text-align: center;
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+  }
+}
