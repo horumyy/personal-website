@@ -197,3 +197,31 @@
     width: 100%; /* Set a width if needed */
   }
 }
+@media (max-width: 900px) and (orientation: landscape){
+
+  .btn-group button {
+    display: flex;
+    text-align: center;
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+    height: 50%;
+    margin: 32% auto auto 60%;
+  }
+  .btn-high {
+    margin-top: -40%;
+    margin-bottom: 10%;
+  }
+  .text-high{
+    margin-top: 5%;
+  }
+  .center-image{
+    display:flex;
+    justify-content: top; /* horizontally center */
+    align-items:center;    /* vertically center */
+  }
+  
+  .center-image img{
+   max-width:100%;
+   max-height:100%;
+  }
+}
