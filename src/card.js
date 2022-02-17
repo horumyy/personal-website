@@ -22,8 +22,8 @@ function Card() {
 
 
   return (
-    <body class="p-layout">
-      <div class="center-image">
+    <body className="p-layout">
+      <div className="center-image">
         <ReactRoundedImage
         image={MyPhoto}
         roundedSize="0"
@@ -31,22 +31,22 @@ function Card() {
         imageHeight="120"
       />
       </div>
-      <h1 class="">Jorge Plasencia</h1>
-      <p class="p-silver-500">C.S. Student & Web Developer</p>
+      <h1 className="">Jorge Plasencia</h1>
+      <p className="p-silver-500">C.S. Student & Web Developer</p>
       <a href={CV} download="CV_JorgePlasencia" target='_blank'>
-        <button class="p-btn p-prim-col p-btn-sm btn-high ">Download CV</button>
+        <button className="p-btn p-prim-col p-btn-sm btn-high ">Download CV</button>
       </a>
-      <div class="btn-group"> 
-        <button onClick={clickGit} class="p-btn p">
-          <span class="icon-social-github" />
+      <div className="btn-group"> 
+        <button onClick={clickGit} className="p-btn p">
+          <span className="icon-social-github" />
           ㅤGitHub
         </button>
-        <button onClick={clickLinked} class="p-btn p ">
-            <span class="icon-social-linkedin"/>
+        <button onClick={clickLinked} className="p-btn p ">
+            <span className="icon-social-linkedin"/>
             ㅤLinkedIn
         </button>
-        <button onClick={clickTwitter} class="p-btn p">
-            <span class="icon-social-twitter"/>
+        <button onClick={clickTwitter} className="p-btn p">
+            <span className="icon-social-twitter"/>
             ㅤTwitter
         </button>
       </div>
