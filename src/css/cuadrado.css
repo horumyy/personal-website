@@ -1,0 +1,18 @@
+.cuadrado {
+    border-radius: 25px;
+    background: #FAFAFD;
+    width: 25%;
+    height: 50%;
+  }
+  .effect1{
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+  }
+  .centrar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }

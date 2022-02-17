@@ -171,7 +171,7 @@
   margin: .2rem auto;
   text-align: center;
   cursor: pointer; /* Pointer/hand icon */
-  width: 38%; /* Set a width if needed */
+  width: 70%; /* Set a width if needed */
 }
 
 .btn-group button:not(:last-child) {
@@ -181,4 +181,9 @@
 /* Add a background color on hover */
 .btn-group button:hover {
   background-color: #cacaca;
+}
+
+.btn-high {
+  margin-top: -20%;
+  margin-bottom: 10%;
 }

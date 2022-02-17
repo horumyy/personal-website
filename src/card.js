@@ -34,7 +34,7 @@ function Card() {
       <h1 class="">Jorge Plasencia</h1>
       <p class="p-silver-500">C.S. Student & Web Developer</p>
       <a href={CV} download="CV_JorgePlasencia" target='_blank'>
-        <button class="p-btn p-prim-col p-btn-sm">Download CV</button>
+        <button class="p-btn p-prim-col p-btn-sm btn-high">Download CV</button>
       </a>
       <div class="btn-group"> 
         <button onClick={clickGit} class="p-btn">
