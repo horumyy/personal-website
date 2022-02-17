@@ -168,7 +168,7 @@
 
 .btn-group button {
   display: block;
-  margin: .2rem auto;
+  margin: 5% auto;
   text-align: center;
   cursor: pointer; /* Pointer/hand icon */
   width: 70%; /* Set a width if needed */
