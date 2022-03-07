@@ -1,8 +1,4 @@
 import { Card } from './card';
-import './App.css';
-import "./css/dark_mode.css"
-import "./css/cuadrado.css"
-import "./css/landscape.css"
 
 
 function App() {

@@ -1,16 +1,12 @@
 import React from "react";
-import "./css/buttons.css";
-import "./css/dark_mode.css";
-import "./css/layout.css";
-import "./css/landscape.css";
-import "./css/color_palette.css";
+
 import MyPhoto from "./Images/Untitled.png";
 import ReactRoundedImage from "react-rounded-image";
 import CV from "./CV_Jorge_Plasencia.pdf";
 
 function Info() {
   return (
-    <body className="p-layout">
+    <div className="p-layout">
       <div className="center-image">
         <ReactRoundedImage
           image={MyPhoto}
@@ -30,7 +26,7 @@ function Info() {
           </button>
         </a>
       </div>
-    </body>
+    </div>
   );
 }
 

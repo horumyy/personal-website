@@ -1,9 +1,5 @@
 import React from "react";
-import "./css/buttons.css";
-import "./css/dark_mode.css";
-import "./css/layout.css";
-import "./css/color_palette.css";
-import "./css/landscape.css";
+
 
 function LinkTree() {
     const clickGit = () => {
@@ -16,7 +12,7 @@ function LinkTree() {
         window.open("https://twitter.com/JorgePAJ");
       };
   return (
-    <body>
+    <div>
       <div className="btn-group">
         <button onClick={clickGit} className="p-btn p">
           <span className="icon-social-github" />
@@ -31,7 +27,7 @@ function LinkTree() {
           ㅤTwitter
         </button>
       </div>
-    </body>
+    </div>
   );
 }
 
