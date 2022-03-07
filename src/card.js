@@ -5,9 +5,9 @@ import { LinkTree } from "./linktree";
 
 function Card() {
   return (
-    <div className="p-layout flex-container">
-      <div className="flex-child landscapeInfo"><Info/></div>
-      <div className="flex-child"><LinkTree/></div>
+    <div className="">
+      <div className=""><Info/></div>
+      <div className=""><LinkTree/></div>
     </div>
   );
 }
