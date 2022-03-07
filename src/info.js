@@ -15,7 +15,7 @@ function Info() {
     }
     return (
       <div className="fixed left-[0] top-[0] right-[0] bottom-[0] bg-[rgba(0,0,0,0.5) flex items-center justify-center backdrop-brightness-50">
-        <div className="p-4 modal-content bg-gray-200 w-[40%] sm:w-[20%] drop-shadow-2xl rounded-lg">
+        <div className="p-4 modal-content bg-gray-200 w-[60%] sm:w-[20%] drop-shadow-2xl rounded-lg">
           <div className="modal-header">
             <h1 className="modal-title">Thank you</h1>
           </div>
