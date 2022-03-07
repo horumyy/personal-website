@@ -1,16 +1,16 @@
 import React from "react";
-
+import "./styles/buttons.css";
 
 function LinkTree() {
-    const clickGit = () => {
-        window.open("https://github.com/WaberHoruhe");
-      };
-      const clickLinked = () => {
-        window.open("https://www.linkedin.com/in/jorgeplasenciaa/");
-      };
-      const clickTwitter = () => {
-        window.open("https://twitter.com/JorgePAJ");
-      };
+  const clickGit = () => {
+    window.open("https://github.com/WaberHoruhe");
+  };
+  const clickLinked = () => {
+    window.open("https://www.linkedin.com/in/jorgeplasenciaa/");
+  };
+  const clickTwitter = () => {
+    window.open("https://twitter.com/JorgePAJ");
+  };
   return (
     <div>
       <div className="btn-group">
