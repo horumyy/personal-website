@@ -9,7 +9,6 @@ import { useState } from "react";
 function Info() {
   const [show, setShow] = useState(false);
 
-
   const Modal = (props) => {
     if (!props.show) {
       return null;
