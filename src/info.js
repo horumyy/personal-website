@@ -22,7 +22,7 @@ function Info() {
       <div className="test">
         <h1 className="text-high">Jorge Plasencia</h1>
         <p className="p-silver-500 text-high">C.S. Student & Self-taught Programmer</p>
-        <a href={CV} download="CV_JorgePlasencia" target="_blank">
+        <a href={CV} download="CV_Jorge_Plasencia" target="_blank">
           <button className="p-btn p-prim-col p-btn-sm btn-high ">
             Download CV
           </button>
