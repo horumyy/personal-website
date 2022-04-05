@@ -29,7 +29,7 @@ function Info() {
           <p className="mb-4 text-[1.15rem] font-thin ">
             C.S. Student & Self-taught Programmer
           </p>
-          <a href={CV} download="CV_JorgePlasencia" rel="noopener">
+          <a href={CV} download="CV_JorgePlasencia.pdf" rel="noopener">
             <button className="p-btn p-prim-col p-btn-sm btn-high">
               Download CV
             </button>
