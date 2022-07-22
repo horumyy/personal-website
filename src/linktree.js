@@ -14,15 +14,15 @@ function LinkTree() {
   return (
     <div>
       <div className="btn-group">
-        <button onClick={clickGit} className="p-btn p">
+        <button onClick={clickGit} className="p-btn p transition-all duration-250">
           <span className="icon-social-github" />
           ㅤGitHub
         </button>
-        <button onClick={clickLinked} className="p-btn p">
+        <button onClick={clickLinked} className="p-btn p transition-all duration-250">
           <span className="icon-social-linkedin" />
           ㅤLinkedIn
         </button>
-        <button onClick={clickTwitter} className="p-btn p">
+        <button onClick={clickTwitter} className="p-btn p transition-all duration-250">
           <span className="icon-social-twitter" />
           ㅤTwitter
         </button>
