@@ -7,7 +7,7 @@ interface ThreeSceneProps {
 
 function ThreeScene(props: ThreeSceneProps) {
   return (
-    <Canvas>
+    <Canvas >
       <ambientLight />
       <pointLight position={[2, 2, 2]} />
       <mesh>
