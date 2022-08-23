@@ -25,6 +25,7 @@ const Home: NextPage = () => {
           )
         )
           check = true;
+        // @ts-ignore
       })(navigator.userAgent || navigator.vendor || window.opera);
       setIsMobile(check);
       return check;
