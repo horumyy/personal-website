@@ -8,6 +8,7 @@ interface BlocksProps {
     url: string;
     icon: IconProp;
   };
+  index?: number;
 }
 
 function SocialButton(props: BlocksProps) {
@@ -15,6 +16,7 @@ function SocialButton(props: BlocksProps) {
     <a
       className="w-[100px] group"
       href={props.block.url}
+      key={props.index}
       target="_blank"
       rel="noopener noreferrer"
     >

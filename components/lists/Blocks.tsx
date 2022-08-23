@@ -16,7 +16,7 @@ function Blocks(props: BlocksProps) {
   return (
     <div className="flex flex-col gap-[8px] my-[16px]">
       {props.blocks.map((block, index) => (
-        <SocialButton block={block} />
+        <SocialButton block={block} key={index} />
       ))}
     </div>
   );
