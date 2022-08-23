@@ -12,6 +12,7 @@ const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
   // Prevent zoom on mobile
   useEffect(() => {
+    // @ts-ignore
     window.mobileCheck = function () {
       let check = false;
       (function (a) {
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
       setIsMobile(check);
       return check;
     };
+    // @ts-ignore
     window.mobileCheck();
   }, []);
 
