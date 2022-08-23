@@ -29,14 +29,14 @@ const Home: NextPage = () => {
     },
   ];
   return (
-    <div className="h-screen">
+    <div className="h-screen w-screen ">
       <Head>
         <title>Jorge Plasencia Ahm</title>
         <meta name="description" content="Welcome to my personal website <3" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-[#d4d4d4] h-screen w-screen flex justify-center items-center">
+      <div className="bg-[#d4d4d4] h-full w-full flex justify-center items-center">
         <div className="bg-white flex flex-col w-[90vw]  sm:w-auto sm:px-4 rounded-3xl shadow items-center ">
           <div className="flex flex-col items-center mt-4">
             <div className="bg-hotpink rounded-full w-[7rem] h-[7rem] flex items-center justify-center select-none">
