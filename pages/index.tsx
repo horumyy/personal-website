@@ -12,6 +12,26 @@ const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
   // Prevent zoom on mobile
   useEffect(() => {
+    document.addEventListener("gesturestart", function (e) {
+      e.preventDefault();
+      // @ts-ignore
+      document.body.style.zoom = 0.99;
+    });
+
+    document.addEventListener("gesturechange", function (e) {
+      e.preventDefault();
+      // @ts-ignore
+      document.body.style.zoom = 0.99;
+    });
+    document.addEventListener("gestureend", function (e) {
+      e.preventDefault();
+      // @ts-ignore
+      document.body.style.zoom = 1;
+    });
+  }, []);
+
+  // Detect mobile
+  useEffect(() => {
     // @ts-ignore
     window.mobileCheck = function () {
       let check = false;
