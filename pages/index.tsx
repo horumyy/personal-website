@@ -66,10 +66,12 @@ const Home: NextPage = () => {
         <div
           className={`bg-white flex ${
             isMobile ? "landscape:flex-row" : "flex-col"
-          } w-[90vw]  sm:w-auto sm:px-4 rounded-3xl shadow items-center`}
+          } w-[90vw] sm:w-auto sm:px-4 rounded-3xl shadow items-center`}
         >
           <div
-            className={`flex flex-col items-center my-4 landscape:mx-4 landscape:mr-10 text-center`}
+            className={`flex flex-col items-center my-4 landscape:mx-4 ${
+              isMobile && "landscape:mr-10"
+            } text-center`}
           >
             <div className="bg-hotpink rounded-full w-[7rem] h-[7rem] flex items-center justify-center select-none">
               <img src="./favicon.ico" alt="Jorge" className="w-[5rem]" />
