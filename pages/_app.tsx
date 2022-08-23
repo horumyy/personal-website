@@ -1,23 +1,28 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import * as gtag from "../utils/gtag";
+import Script from "next/script";
 
-const App = ({ Component, pageProps }: AppProps) => {
-  const router = useRouter();
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=G-Q0E23XRB7V`}
+      />
+      ;
+      <Script strategy="lazyOnload">
+        {`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      gtag.pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
+  gtag('config', 'G-Q0E23XRB7V');
+      `}
+      </Script>
+      ;
+      <Component {...pageProps} />;{" "}
+    </>
+  );
+}
 
-  return <Component {...pageProps} />;
-};
-
-export default App;
+export default MyApp;
