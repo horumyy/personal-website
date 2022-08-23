@@ -14,7 +14,7 @@ interface BlocksProps {
 
 function Blocks(props: BlocksProps) {
   return (
-    <div className="flex flex-col gap-[8px] my-[16px]">
+    <div className="flex flex-col gap-[8px] landscape:gap-[16px] my-[16px]">
       {props.blocks.map((block, index) => (
         <SocialButton block={block} key={index} />
       ))}
