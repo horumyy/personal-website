@@ -115,7 +115,7 @@ const Home: NextPage = () => {
               <span>Download CV</span>
             </a>
           </div>
-          <Blocks blocks={blocks} />
+          <Blocks blocks={blocks} mobile={isMobile}/>
         </div>
       </div>
     </div>
