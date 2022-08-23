@@ -5,12 +5,32 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Blocks from "../components/lists/Blocks";
 import ThreeScene from "../components/threejs/ThreeScene";
 import { isMobile } from "react-device-detect";
 
 const Home: NextPage = () => {
+  // Prevent zoom on mobile
+  useEffect(() => {
+    document.addEventListener("gesturestart", function (e) {
+      e.preventDefault();
+      // @ts-ignore
+      document.body.style.zoom = 0.99;
+    });
+
+    document.addEventListener("gesturechange", function (e) {
+      e.preventDefault();
+      // @ts-ignore
+      document.body.style.zoom = 0.99;
+    });
+    document.addEventListener("gestureend", function (e) {
+      e.preventDefault();
+      // @ts-ignore
+      document.body.style.zoom = 1;
+    });
+  }, []);
+
   const [color, setColor] = useState("hotpink");
   const blocks = [
     {
@@ -29,13 +49,16 @@ const Home: NextPage = () => {
       icon: faTwitterSquare,
     },
   ];
-  console.log(isMobile)
+  console.log(isMobile);
   return (
     <div className="h-screen w-screen ">
       <Head>
         <title>Jorge Plasencia Ahm</title>
         <meta name="description" content="Welcome to my personal website <3" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
