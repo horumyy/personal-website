@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=G-Q0E23XRB7V`}
       />
-      ;
       <Script strategy="lazyOnload">
         {`
   window.dataLayer = window.dataLayer || [];
@@ -19,8 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   gtag('config', 'G-Q0E23XRB7V');
       `}
       </Script>
-      ;
-      <Component {...pageProps} />;{" "}
+      <Component {...pageProps} />;
     </>
   );
 }
