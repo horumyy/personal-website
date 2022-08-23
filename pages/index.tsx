@@ -72,7 +72,6 @@ const Home: NextPage = () => {
       icon: faTwitterSquare,
     },
   ];
-  console.log(isMobile);
   return (
     <div className="h-screen w-screen ">
       <Head>
@@ -115,7 +114,7 @@ const Home: NextPage = () => {
               <span>Download CV</span>
             </a>
           </div>
-          <Blocks blocks={blocks} mobile={isMobile}/>
+          <Blocks blocks={blocks} mobile={isMobile} />
         </div>
       </div>
     </div>
