@@ -54,7 +54,6 @@ const Home: NextPage = () => {
     window.mobileCheck();
   }, []);
 
-  const [color, setColor] = useState("hotpink");
   const blocks = [
     {
       title: "GitHub",
@@ -73,7 +72,7 @@ const Home: NextPage = () => {
     },
   ];
   return (
-    <div className="h-screen w-screen ">
+    <div className="h-screen w-screen overflow-y-hidden">
       <Head>
         <title>Jorge Plasencia Ahm</title>
         <meta name="description" content="Welcome to my personal website <3" />
