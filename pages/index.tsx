@@ -65,7 +65,7 @@ const Home: NextPage = () => {
       <div className="bg-[#d4d4d4] h-full w-full flex justify-center items-center">
         <div
           className={`bg-white flex ${
-            isMobile ? "landscape:flex-row flex-col" : "flex-col"
+            isMobile ? "landscape:flex-row" : "flex-col"
           } w-[90vw]  sm:w-auto sm:px-4 rounded-3xl shadow items-center`}
         >
           <div
