@@ -15,7 +15,7 @@ interface ThreeSceneProps {
 function ThreeScene(props: ThreeSceneProps) {
   return (
     <>
-      <Canvas className="w-screen h-screen overflow-y-hidden">
+      <Canvas className=" w-screen h-screen overflow-y-hidden">
         <ambientLight />
         <OrbitControls autoRotate />
         <pointLight position={[2, 2, 2]} />

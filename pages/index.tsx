@@ -74,8 +74,9 @@ const Home: NextPage = () => {
       icon: faTwitterSquare,
     },
   ];
+
   return (
-    <div className="relative h-screen w-screen overflow-y-hidden">
+    <div className={`relative h-screen w-screen overflow-hidden `}>
       <Head>
         <title>Jorge Plasencia Ahm</title>
         <meta name="description" content="Welcome to my personal website <3" />
