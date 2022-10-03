@@ -3,10 +3,13 @@ import {
   faLinkedin,
   faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons";
+import { Canvas } from "@react-three/fiber";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Blocks from "../components/lists/Blocks";
+import Box from "../components/threejs/Box";
+import ThreeScene from "../components/threejs/ThreeScene";
 
 const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -72,7 +75,7 @@ const Home: NextPage = () => {
     },
   ];
   return (
-    <div className="h-screen w-screen overflow-y-hidden">
+    <div className="relative h-screen w-screen overflow-y-hidden">
       <Head>
         <title>Jorge Plasencia Ahm</title>
         <meta name="description" content="Welcome to my personal website <3" />
@@ -82,8 +85,7 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div className="bg-[#d4d4d4] h-full w-full flex justify-center items-center">
+      <div className="absolute z-[100] top-0 overlay h-full w-full flex justify-center items-center">
         <div
           className={`bg-white flex ${
             isMobile ? "landscape:flex-row portrait:flex-col" : "flex-col"
@@ -116,6 +118,7 @@ const Home: NextPage = () => {
           <Blocks blocks={blocks} mobile={isMobile} />
         </div>
       </div>
+      <ThreeScene blocks={blocks} isMobile={isMobile} />
     </div>
   );
 };
