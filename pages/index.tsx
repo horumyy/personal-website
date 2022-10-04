@@ -4,6 +4,7 @@ import {
   faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons";
 import { Canvas } from "@react-three/fiber";
+
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -11,7 +12,7 @@ import Blocks from "../components/lists/Blocks";
 import Avatar from "../components/threejs/Avatar";
 import Box from "../components/threejs/Box";
 import ThreeScene from "../components/threejs/ThreeScene";
-
+import { BrowserView, MobileView } from "react-device-detect";
 const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
   // Prevent zoom on mobile
@@ -77,7 +78,7 @@ const Home: NextPage = () => {
   ];
 
   return (
-    <div className={`relative h-screen w-screen overflow-hidden `}>
+    <div className={` h-screen w-screen overflow-hidden `}>
       <Head>
         <title>Jorge Plasencia Ahm</title>
         <meta name="description" content="Welcome to my personal website <3" />
@@ -99,8 +100,11 @@ const Home: NextPage = () => {
             } text-center`}
           >
             <div className="bg-hotpink rounded-full w-[7rem] h-[7rem] flex items-center justify-center select-none">
-              {/* <img src="./favicon.ico" alt="Jorge" className="w-[5rem]" /> */}
-              <Avatar/>
+              {isMobile ? (
+                <img src="./favicon.ico" alt="Jorge" className="w-[5rem]" />
+              ) : (
+                <Avatar isMobile={isMobile} />
+              )}
             </div>
 
             <span className="select-none text-[2.25rem] text-transparent bg-clip-text bg-gradient-to-br from-pink-200 via-pink-300 to-blue-600">
