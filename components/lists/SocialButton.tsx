@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import mixpanel from "mixpanel-browser";
 
 interface BlocksProps {
   block: {
@@ -19,6 +20,9 @@ function SocialButton(props: BlocksProps) {
       key={props.index}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => {
+        mixpanel.track(`Social button: ${props.block.title}`);
+      }}
     >
       <div className="flex transition-all duration-500 group-hover:transform group-hover:translate-y-[-.2rem]">
         <div className="flex items-center rounded-l-md p-1 border-l border-t border-b group-hover:bg-gray-50 transition-all duration-350">

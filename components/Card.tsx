@@ -2,6 +2,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import React, { useEffect } from "react";
 import Blocks from "./lists/Blocks";
 import Avatar from "./threejs/Avatar";
+import mixpanel from "mixpanel-browser";
 
 interface iCardProps {
   isMobile: boolean;
@@ -13,6 +14,11 @@ interface iCardProps {
 }
 
 function Card({ isMobile, blocks }: iCardProps) {
+  useEffect(() => {
+    mixpanel.init("aae2f618fd0b4a07fa758d7ad008e0dc",);
+    console.log("logged");
+  }, []);
+
   useEffect(() => {
     const card = document.getElementById("card");
     card?.classList.remove("opacity-0");
@@ -53,6 +59,9 @@ function Card({ isMobile, blocks }: iCardProps) {
             className="text-white select-none px-[14px] py-[6px] rounded-md transition-all duration-500 bg-gradient-to-tl to-[#9C89B8] via-[#F0A6CA] from-[#DEC0F1] bg-size-200 bg-pos-0 hover:bg-pos-100"
             href={"/CV_Jorge_Plasencia.pdf"}
             download="CV_JorgePlasencia.pdf"
+            onClick={() => {
+              mixpanel.track("Download CV");
+            }}
           >
             <span className="select-none">Download CV</span>
           </a>
