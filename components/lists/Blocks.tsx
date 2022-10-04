@@ -13,7 +13,7 @@ interface BlocksProps {
 
 function Blocks(props: BlocksProps) {
   return (
-    <div className={`flex flex-col gap-[8px] landscape:gap-[16px] my-[16px] ${props.mobile && "mr-4"}`}>
+    <div className={`flex flex-col gap-[8px] landscape:gap-[16px] my-[16px] ${props.mobile && "mx-4"}`}>
       {props.blocks.map((block, index) => (
         <SocialButton block={block} key={index} />
       ))}

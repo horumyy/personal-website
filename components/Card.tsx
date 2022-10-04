@@ -27,7 +27,7 @@ function Card({ isMobile, blocks }: iCardProps) {
           isMobile
             ? "landscape:flex-row portrait:flex-col"
             : "flex-col opacity-0"
-        } w-[90vw] sm:w-auto sm:px-4 rounded-3xl shadow items-center`}
+        } w-[90vw]  sm:w-auto sm:px-4 rounded-3xl shadow items-center`}
       >
         <div
           className={`flex flex-col items-center my-4 landscape:mx-4 select-none ${
@@ -36,7 +36,7 @@ function Card({ isMobile, blocks }: iCardProps) {
         >
           <div className="bg-hotpink rounded-full w-[7rem] h-[7rem] flex items-center justify-center select-none">
             {isMobile ? (
-              <img src="./favicons/favicon.ico" alt="Jorge" className="w-[5rem]" />
+              <img src="./favicons/favicon.ico" alt="Jorge" className="w-max" />
             ) : (
               <Avatar isMobile={isMobile} />
             )}
