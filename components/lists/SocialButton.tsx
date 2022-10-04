@@ -14,7 +14,7 @@ interface BlocksProps {
 function SocialButton(props: BlocksProps) {
   return (
     <a
-      className="w-[100px] group"
+      className="w-[100px] group select-none"
       href={props.block.url}
       key={props.index}
       target="_blank"
@@ -27,9 +27,9 @@ function SocialButton(props: BlocksProps) {
             className="h-[25px] text-hotpink"
           />
         </div>
-        <div className=" flex-grow text-center border-l-2 rounded-r-md border-r border-t border-b group-hover:bg-gray-100 transition-all duration-350">
-          <div className="flex-grow-0 text-gray-800 text-center py-1 font-thin">
-            {props.block.title}
+        <div className="select-none flex-grow text-center border-l-2 rounded-r-md border-r border-t border-b group-hover:bg-gray-100 transition-all duration-350">
+          <div className="select-none flex-grow-0 text-gray-800 text-center py-1 font-thin">
+            <span className="select-none">{props.block.title}</span>
           </div>
         </div>
       </div>
