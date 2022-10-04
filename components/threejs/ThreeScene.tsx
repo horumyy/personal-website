@@ -1,10 +1,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import Blocks from "../lists/Blocks";
-import Box from "./Box";
-import { Html, OrbitControls } from "@react-three/drei";
+import {  OrbitControls } from "@react-three/drei";
 import Star from "./Star";
-import { useEffect, useState } from "react";
-import * as THREE from "three";
+
 
 interface ThreeSceneProps {
   color?: string;
@@ -15,7 +12,7 @@ interface ThreeSceneProps {
 function ThreeScene(props: ThreeSceneProps) {
   return (
     <>
-      <Canvas className="w-screen h-screen overflow-y-hidden">
+      <Canvas className=" w-screen h-screen overflow-y-hidden">
         <ambientLight />
         <OrbitControls autoRotate />
         <pointLight position={[2, 2, 2]} />
