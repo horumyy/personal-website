@@ -1,5 +1,5 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import React from "react";
+import React, { useEffect } from "react";
 import Blocks from "./lists/Blocks";
 import Avatar from "./threejs/Avatar";
 
@@ -13,10 +13,17 @@ interface iCardProps {
 }
 
 function Card({ isMobile, blocks }: iCardProps) {
+  useEffect(() => {
+    const card = document.getElementById("card");
+    card?.classList.remove("opacity-0");
+    card?.classList.add("opacity-100");
+  }, []);
+
   return (
-    <div className="absolute z-[100] top-0 overlay h-full w-full flex justify-center items-center">
+    <div className="absolute bg-transparent z-[100] top-0 h-full w-full flex justify-center items-center">
       <div
-        className={`bg-white flex ${
+        id="card"
+        className={`transition-all duration-[3000ms] opacity-0 bg-white flex ${
           isMobile ? "landscape:flex-row portrait:flex-col" : "flex-col"
         } w-[90vw] sm:w-auto sm:px-4 rounded-3xl shadow items-center`}
       >
