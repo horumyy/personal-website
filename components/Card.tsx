@@ -23,8 +23,10 @@ function Card({ isMobile, blocks }: iCardProps) {
     <div className="absolute bg-transparent z-[100] top-0 h-full w-full flex justify-center items-center">
       <div
         id="card"
-        className={`transition-all duration-[3000ms] opacity-0 bg-white flex ${
-          isMobile ? "landscape:flex-row portrait:flex-col" : "flex-col"
+        className={`transition-all duration-[1000ms]  bg-white flex ${
+          isMobile
+            ? "landscape:flex-row portrait:flex-col"
+            : "flex-col opacity-0"
         } w-[90vw] sm:w-auto sm:px-4 rounded-3xl shadow items-center`}
       >
         <div
