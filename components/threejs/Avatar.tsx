@@ -1,8 +1,9 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { Mesh } from "three";
-import * as THREE from "three";
 import { isMobile } from "react-device-detect";
+import dynamic from "next/dynamic";
+const Gltf = dynamic(() => import("../Gltf"), { ssr: false });
 
 interface iAvatarProps {
   isMobile?: boolean;
@@ -10,14 +11,10 @@ interface iAvatarProps {
 
 function Avatar(props: iAvatarProps) {
   const avatarRef = useRef<Mesh>(null);
-  var mousePosition = {
-    x: 0,
-    y: 0,
-  };
 
   function MoveCamera() {
     useFrame(({ camera }) => {
-      camera.position.z = 2;
+      camera.position.z = 30;
       camera.lookAt(avatarRef.current!.position);
     });
     return null;
@@ -44,10 +41,11 @@ function Avatar(props: iAvatarProps) {
 
   return (
     <Canvas>
+      <ambientLight />
       <MoveCamera />
       <mesh ref={avatarRef}>
-        <boxGeometry />
-        <meshBasicMaterial color={"black"} />
+        <Gltf />
+        <meshBasicMaterial color={"red"} />
       </mesh>
     </Canvas>
   );

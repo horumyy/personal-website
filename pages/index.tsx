@@ -81,9 +81,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={` h-screen w-screen overflow-hidden `}>
-      <Head>
-        <MetaDefault />
-      </Head>
+      <MetaDefault />
       <Card blocks={blocks} isMobile={isMobile} />
       <ThreeScene />
     </div>

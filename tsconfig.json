@@ -20,7 +20,7 @@
     "typeRoots": ["./node_modules/@types", "./src/types"]
 
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/my-sitemap.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/my-sitemap.js", "components/threejs/Dino.js"],
   "exclude": ["node_modules"],
   
 }

@@ -12,7 +12,10 @@ function ThreeScene() {
 
   return (
     <>
-      <Canvas id="canvas" className="transition-all duration-[1000ms] opacity-0 w-screen h-screen overflow-y-hidden">
+      <Canvas
+        id="canvas"
+        className="transition-all duration-[1000ms] opacity-0 w-screen h-screen overflow-y-hidden"
+      >
         <ambientLight />
         <OrbitControls autoRotate />
         <pointLight position={[2, 2, 2]} />
