@@ -36,7 +36,7 @@ function Card({ isMobile, blocks }: iCardProps) {
         >
           <div className="bg-hotpink rounded-full w-[7rem] h-[7rem] flex items-center justify-center select-none">
             {isMobile ? (
-              <img src="./favicon.ico" alt="Jorge" className="w-[5rem]" />
+              <img src="./favicons/favicon.ico" alt="Jorge" className="w-[5rem]" />
             ) : (
               <Avatar isMobile={isMobile} />
             )}
