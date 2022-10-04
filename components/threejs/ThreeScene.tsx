@@ -1,15 +1,8 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import {  OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import Star from "./Star";
 
-
-interface ThreeSceneProps {
-  color?: string;
-  blocks: { title: string; url: string; icon: any }[];
-  isMobile: boolean;
-}
-
-function ThreeScene(props: ThreeSceneProps) {
+function ThreeScene() {
   return (
     <>
       <Canvas className=" w-screen h-screen overflow-y-hidden">
