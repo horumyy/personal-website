@@ -42,9 +42,9 @@ function Card({ isMobile, blocks }: iCardProps) {
             )}
           </div>
 
-          <span className="select-none text-[2.25rem] text-transparent bg-clip-text bg-gradient-to-br from-pink-200 via-pink-300 to-blue-600">
+          <h1 className="select-none text-[2.25rem] text-transparent bg-clip-text bg-gradient-to-br from-pink-200 via-pink-300 to-blue-600">
             Jorge Plasencia
-          </span>
+          </h1>
           <span className="select-none text-[1.15rem] font-thin mb-2">
             C.S. Student & Self-taught Programmer
           </span>
@@ -57,7 +57,7 @@ function Card({ isMobile, blocks }: iCardProps) {
               Mixpanel.track("Download CV");
             }}
           >
-            <span className="select-none">Download CV</span>
+            <h2 className="select-none">Download CV</h2>
           </a>
         </div>
         <Blocks blocks={blocks} mobile={isMobile} />
