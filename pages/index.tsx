@@ -14,6 +14,7 @@ import Box from "../components/threejs/Box";
 import ThreeScene from "../components/threejs/ThreeScene";
 import { BrowserView, MobileView } from "react-device-detect";
 import Card from "../components/Card";
+import MetaDefault from "../components/meta/MetaDefault";
 const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
   // Prevent zoom on mobile
@@ -80,17 +81,12 @@ const Home: NextPage = () => {
 
   return (
     <div className={` h-screen w-screen overflow-hidden `}>
+      <MetaDefault />
       <Head>
-        <title>Jorge Plasencia Ahm</title>
-        <meta name="description" content="Welcome to my personal website <3" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-        <link rel="icon" href="/favicon.ico" />
+
       </Head>
       <Card blocks={blocks} isMobile={isMobile} />
-      <ThreeScene/>
+      <ThreeScene />
     </div>
   );
 };
