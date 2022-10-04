@@ -15,8 +15,7 @@ interface iCardProps {
 
 function Card({ isMobile, blocks }: iCardProps) {
   useEffect(() => {
-    mixpanel.init("aae2f618fd0b4a07fa758d7ad008e0dc",);
-    console.log("logged");
+    mixpanel.init(process.env.NEXT_PUBLIC_MIXPANEL_TOKEN || "");
   }, []);
 
   useEffect(() => {
