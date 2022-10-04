@@ -1,9 +1,7 @@
-import { Canvas, useFrame, Vector3 } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useEffect, useRef } from "react";
 import { Mesh } from "three";
 import * as THREE from "three";
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import useMousePosition from "../../hooks/MouseTracker";
 
 interface BoxProps {
   color?: string;
@@ -11,8 +9,10 @@ interface BoxProps {
 
 function Avatar(props: BoxProps) {
   const avatarRef = useRef<Mesh>(null);
-  var mousePosition = useMousePosition();
-  var cameraRef = useRef<typeof PerspectiveCamera>(null);
+  var mousePosition = {
+    x: 0,
+    y: 0,
+  };
 
   const vec = new THREE.Vector3();
   function MoveCamera() {
@@ -26,7 +26,7 @@ function Avatar(props: BoxProps) {
       camera.position.lerp(
         vec.set(
           Math.sin(((mousePosition.x * Math.PI) / 2) * 3),
-          Math.sin(((mousePosition.y * Math.PI) / 2) * 3) + 0.5,
+          Math.sin(((mousePosition.y * Math.PI) / 2) * 9),
           Math.cos(((mousePosition.x * Math.PI) / 2) * 3)
         ),
         0.1
@@ -35,6 +35,17 @@ function Avatar(props: BoxProps) {
     });
     return null;
   }
+  useEffect(() => {
+    window.addEventListener("mousemove", (event) => {
+      avatarRef.current!.rotation.y = event.clientX / window.innerWidth - 0.5;
+      avatarRef.current!.rotation.x = event.clientY / window.innerHeight - 0.5;
+
+      avatarRef.current!.position.x =
+        (event.clientX / window.innerWidth - 0.5) * 3;
+      avatarRef.current!.position.y =
+        (event.clientY / window.innerHeight - 0.5) * -3;
+    });
+  }, []);
 
   return (
     <Canvas>
