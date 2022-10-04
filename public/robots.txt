@@ -1,4 +1,9 @@
+# *
 User-agent: *
-Allow: / 
+Allow: /
 
-sitemap:http://localhost/api/my-sitemap
+# Host
+Host: localhost:3000
+
+# Sitemaps
+Sitemap: localhost:3000/sitemap.xml
