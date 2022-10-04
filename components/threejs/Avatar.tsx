@@ -27,14 +27,17 @@ function Avatar(props: iAvatarProps) {
       console.log("Asdads");
     } else {
       window.addEventListener("mousemove", (event) => {
-        avatarRef.current!.rotation.y = event.clientX / window.innerWidth - 0.5;
-        avatarRef.current!.rotation.x =
-          event.clientY / window.innerHeight - 0.5;
+        if (avatarRef.current != null) {
+          avatarRef.current!.rotation.y =
+            event.clientX / window.innerWidth - 0.5;
+          avatarRef.current!.rotation.x =
+            event.clientY / window.innerHeight - 0.5;
 
-        avatarRef.current!.position.x =
-          (event.clientX / window.innerWidth - 0.5) * 3;
-        avatarRef.current!.position.y =
-          (event.clientY / window.innerHeight - 0.5) * -3;
+          avatarRef.current!.position.x =
+            (event.clientX / window.innerWidth - 0.5) * 3;
+          avatarRef.current!.position.y =
+            (event.clientY / window.innerHeight - 0.5) * -3;
+        }
       });
     }
   });
