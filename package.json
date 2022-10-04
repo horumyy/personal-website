@@ -22,6 +22,7 @@
     "react": "18.2.0",
     "react-device-detect": "^2.2.2",
     "react-dom": "18.2.0",
+    "sitemap": "^7.1.1",
     "three": "^0.143.0"
   },
   "devDependencies": {
