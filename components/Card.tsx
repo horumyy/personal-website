@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import Blocks from "./lists/Blocks";
 import Avatar from "./threejs/Avatar";
 import { Mixpanel } from "../utils/mixpanel";
+import * as THREE from "three";
+
 interface iCardProps {
   isMobile: boolean;
   blocks: {
@@ -13,6 +15,8 @@ interface iCardProps {
 }
 
 function Card({ isMobile, blocks }: iCardProps) {
+  const loadingManager = new THREE.LoadingManager();
+
   useEffect(() => {
     const card = document.getElementById("card");
     card?.classList.remove("opacity-0");

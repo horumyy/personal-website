@@ -1,8 +1,11 @@
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { Mesh } from "three";
 import { isMobile } from "react-device-detect";
 import dynamic from "next/dynamic";
+import { Html } from "@react-three/drei";
+import RingLoader from "react-spinners/RingLoader";
+
 const Gltf = dynamic(() => import("../Gltf"), { ssr: false });
 
 interface iAvatarProps {
@@ -44,7 +47,16 @@ function Avatar(props: iAvatarProps) {
       <ambientLight />
       <MoveCamera />
       <mesh ref={avatarRef}>
-        <Gltf />
+        <Suspense
+          fallback={
+            <Html center>
+              <RingLoader color="white" />
+            </Html>
+          }
+        >
+          <Gltf />
+        </Suspense>
+
         <meshBasicMaterial color={"red"} />
       </mesh>
     </Canvas>
