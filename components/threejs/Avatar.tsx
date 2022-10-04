@@ -1,8 +1,9 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { Mesh } from "three";
 import * as THREE from "three";
 import { isMobile } from "react-device-detect";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 interface iAvatarProps {
   isMobile?: boolean;
@@ -10,14 +11,10 @@ interface iAvatarProps {
 
 function Avatar(props: iAvatarProps) {
   const avatarRef = useRef<Mesh>(null);
-  var mousePosition = {
-    x: 0,
-    y: 0,
-  };
 
   function MoveCamera() {
     useFrame(({ camera }) => {
-      camera.position.z = 2;
+      camera.position.z = 30;
       camera.lookAt(avatarRef.current!.position);
     });
     return null;
@@ -42,12 +39,19 @@ function Avatar(props: iAvatarProps) {
     }
   });
 
+  const gltf = useLoader(
+    GLTFLoader,
+    "https://supra-bucket-test.s3.amazonaws.com/others/Totoro.glb"
+  );
+  gltf.scene.position.set(0, -10, 0);
+
   return (
     <Canvas>
+      <ambientLight />
       <MoveCamera />
       <mesh ref={avatarRef}>
-        <boxGeometry />
-        <meshBasicMaterial color={"black"} />
+        <primitive object={gltf.scene} />
+        <meshBasicMaterial color={"red"} />
       </mesh>
     </Canvas>
   );
