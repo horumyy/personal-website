@@ -31,7 +31,7 @@ function SocialButton(props: BlocksProps) {
         </div>
         <div className="select-none flex-grow text-center border-l-2 rounded-r-md border-r border-t border-b group-hover:bg-gray-100 transition-all duration-350">
           <div className="select-none flex-grow-0 text-gray-800 text-center py-1 font-thin">
-            <span className="select-none">{props.block.title}</span>
+            <h4 className="select-none">{props.block.title}</h4>
           </div>
         </div>
       </div>
