@@ -8,6 +8,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Blocks from "../components/lists/Blocks";
+import Avatar from "../components/threejs/Avatar";
 import Box from "../components/threejs/Box";
 import ThreeScene from "../components/threejs/ThreeScene";
 
@@ -98,7 +99,8 @@ const Home: NextPage = () => {
             } text-center`}
           >
             <div className="bg-hotpink rounded-full w-[7rem] h-[7rem] flex items-center justify-center select-none">
-              <img src="./favicon.ico" alt="Jorge" className="w-[5rem]" />
+              {/* <img src="./favicon.ico" alt="Jorge" className="w-[5rem]" /> */}
+              <Avatar/>
             </div>
 
             <span className="select-none text-[2.25rem] text-transparent bg-clip-text bg-gradient-to-br from-pink-200 via-pink-300 to-blue-600">

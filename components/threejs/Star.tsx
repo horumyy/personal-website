@@ -25,7 +25,6 @@ function Star(props: BoxProps) {
     const [x, y, z] = Array(3)
       .fill(null)
       .map(() => randomNumber(-10, 10));
-    console.log(x, y, z);
     boxRef.current?.position.set(x, y, z);
   }, []);
 
