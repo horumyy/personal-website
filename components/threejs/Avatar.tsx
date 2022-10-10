@@ -1,4 +1,4 @@
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useEffect, useRef } from "react";
 import { Mesh } from "three";
 import { isMobile } from "react-device-detect";
@@ -56,8 +56,6 @@ function Avatar(props: iAvatarProps) {
         >
           <Gltf />
         </Suspense>
-
-        <meshBasicMaterial color={"red"} />
       </mesh>
     </Canvas>
   );
