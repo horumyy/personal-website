@@ -1,7 +1,6 @@
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
-import { Mesh, SphereGeometry } from "three";
-import * as THREE from "three";
+import { Mesh } from "three";
 
 interface BoxProps {
   color?: string;

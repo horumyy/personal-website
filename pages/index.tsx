@@ -3,16 +3,9 @@ import {
   faLinkedin,
   faTwitterSquare,
 } from "@fortawesome/free-brands-svg-icons";
-import { Canvas } from "@react-three/fiber";
-
 import type { NextPage } from "next";
-import Head from "next/head";
 import { useEffect, useState } from "react";
-import Blocks from "../components/lists/Blocks";
-import Avatar from "../components/threejs/Avatar";
-import Box from "../components/threejs/Box";
 import ThreeScene from "../components/threejs/ThreeScene";
-import { BrowserView, MobileView } from "react-device-detect";
 import Card from "../components/Card";
 import MetaDefault from "../components/meta/MetaDefault";
 const Home: NextPage = () => {
