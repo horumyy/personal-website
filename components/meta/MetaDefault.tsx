@@ -5,7 +5,7 @@ const MetaDefault = () => {
   const meta = {
     title: "Jorge Plasencia Ahm Jorgensen",
     description:
-      "Jorge Plasencia is a software engineer and computer science student based in Guadalajara, Jalisco. He is currently working at a startup called misfans.",
+      "Jorge Plasencia is a software engineer and computer science student based in Guadalajara, Jalisco.",
     img: "/favicons/favicon.ico",
   };
 
