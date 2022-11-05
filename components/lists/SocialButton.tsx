@@ -6,6 +6,7 @@ interface BlocksProps {
     title: string;
     url: string;
     icon: IconProp;
+    size?: "lg";
   };
   index?: number;
 }
@@ -13,7 +14,9 @@ interface BlocksProps {
 function SocialButton(props: BlocksProps) {
   return (
     <a
-      className="w-[100px] group select-none"
+      className={`${
+        props.block.size ? "w-[200]" : "w-[100px]"
+      } group select-none`}
       href={props.block.url}
       key={props.index}
       target="_blank"
@@ -30,7 +33,11 @@ function SocialButton(props: BlocksProps) {
           />
         </div>
         <div className="select-none flex-grow text-center border-l-2 rounded-r-md border-r border-t border-b group-hover:bg-gray-100 transition-all duration-350">
-          <div className="select-none flex-grow-0 text-gray-800 text-center py-1 font-thin">
+          <div
+            className={`select-none flex-grow-0 text-gray-800 text-center py-1 font-thin ${
+              props.block.size && "px-1"
+            }`}
+          >
             <h4 className="select-none">{props.block.title}</h4>
           </div>
         </div>

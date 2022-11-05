@@ -2,6 +2,7 @@ import {
   faGithubSquare,
   faLinkedin,
   faTwitterSquare,
+  faPaypal,
 } from "@fortawesome/free-brands-svg-icons";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
@@ -55,6 +56,12 @@ const Home: NextPage = () => {
   }, []);
 
   const blocks = [
+    {
+      title: "Buy me a coffee",
+      url: "https://www.paypal.com/donate/?hosted_button_id=XB5UXUPQX8MMN",
+      icon: faPaypal,
+      size: "lg",
+    },
     {
       title: "GitHub",
       url: "https://github.com/JorgePAJ",
