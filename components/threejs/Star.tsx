@@ -23,9 +23,10 @@ function Star(props: BoxProps) {
   };
 
   useEffect(() => {
-    const [x, y, z] = Array(3)
-      .fill(null)
-      .map(() => randomNumber(-10, 10));
+    const x = randomNumber(-10, 10);
+    const y = randomNumber(-10, 10);
+    const z = randomNumber(-10, 10);
+
     boxRef.current?.position.set(x, y, z);
   }, []);
 
