@@ -1,6 +1,7 @@
 import {
   faGithubSquare,
   faLinkedin,
+  faMastodon,
   faPaypal,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons";
@@ -69,13 +70,19 @@ const Home: NextPage = () => {
     {
       title: "Contact me",
       icon: faEnvelopeSquare,
-      size: "lg",
+
       setAction: () => setModal(true),
     },
     {
       title: "LinkedIn",
       url: "https://www.linkedin.com/in/jorgeplasenciaa/",
       icon: faLinkedin,
+    },
+    {
+      title: "Mastodon",
+      url: "https://uiuxdev.social/@jorgepaj",
+      icon: faMastodon,
+      rel: "me",
     },
     {
       title: "GitHub",

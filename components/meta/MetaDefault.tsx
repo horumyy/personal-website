@@ -17,7 +17,6 @@ const MetaDefault = () => {
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
       />
       <meta name="robots" content="follow, index" />
-
       <meta content={meta.description} name="description" />
       <meta property="og:url" content={process.env.NEXT_PUBLIC_URL} />
       <meta property="og:type" content="website" />

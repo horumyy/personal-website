@@ -7,6 +7,7 @@ interface BlocksProps {
     url?: string;
     icon: IconProp;
     size?: "lg";
+    rel?: string;
   };
   index?: number;
 }
@@ -14,13 +15,14 @@ interface BlocksProps {
 function SocialButton(props: BlocksProps) {
   return (
     <a
+      
       className={`${
-        props.block.size ? "w-[200]" : "w-[100px]"
+        props.block.size ? "w-[200]" : "w-[125px]"
       } group select-none`}
       href={props.block.url}
       key={props.index}
       target="_blank"
-      rel="noopener noreferrer"
+      rel={props.block.rel}
       onClick={() => {
         Mixpanel.track(`Block button pressed`, { Block: props.block.title });
       }}
