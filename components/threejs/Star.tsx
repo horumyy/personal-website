@@ -4,6 +4,8 @@ import { Mesh } from "three";
 
 interface BoxProps {
   color?: string;
+  geometry?: JSX.Element;
+  material?: JSX.Element;
 }
 
 function Star(props: BoxProps) {
@@ -29,8 +31,8 @@ function Star(props: BoxProps) {
 
   return (
     <mesh ref={boxRef}>
-      <sphereGeometry args={[0.25, 24, 24]} />
-      <meshBasicMaterial color={"white"} />
+       {props.geometry}
+       {props.material}
     </mesh>
   );
 }
