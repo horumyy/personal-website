@@ -1,6 +1,7 @@
 import { useRef, useState, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
 
 interface Props {
   isOpen: boolean;
@@ -21,7 +22,12 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
     e.preventDefault();
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
       (result: any) => {
-        alert("Message sent successfully");
+        Swal.fire({
+          icon: "success",
+          title: "Your message has been sent!",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       },
       (error: any) => {
         console.log(error.text);

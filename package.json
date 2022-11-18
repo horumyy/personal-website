@@ -28,6 +28,7 @@
     "react-dom": "18.2.0",
     "react-spinners": "^0.13.5",
     "sitemap": "^7.1.1",
+    "sweetalert2": "^11.6.9",
     "three": "^0.143.0"
   },
   "devDependencies": {
