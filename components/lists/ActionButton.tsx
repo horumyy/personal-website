@@ -7,22 +7,21 @@ interface BlocksProps {
     url?: string;
     icon: IconProp;
     size?: "lg";
+    setAction?: () => void;
   };
   index?: number;
 }
 
-function SocialButton(props: BlocksProps) {
+function ActionButton(props: BlocksProps) {
   return (
-    <a
+    <button
       className={`${
         props.block.size ? "w-[200]" : "w-[100px]"
       } group select-none`}
-      href={props.block.url}
       key={props.index}
-      target="_blank"
-      rel="noopener noreferrer"
       onClick={() => {
         Mixpanel.track(`Block button pressed`, { Block: props.block.title });
+        props.block.setAction?.();
       }}
     >
       <div className="flex transition-all duration-500 group-hover:transform group-hover:translate-y-[-.2rem]">
@@ -42,8 +41,8 @@ function SocialButton(props: BlocksProps) {
           </div>
         </div>
       </div>
-    </a>
+    </button>
   );
 }
 
-export default SocialButton;
+export default ActionButton;

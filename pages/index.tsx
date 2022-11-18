@@ -1,15 +1,18 @@
 import {
   faGithubSquare,
   faLinkedin,
-  faTwitterSquare,
   faPaypal,
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons";
 import type { NextPage } from "next";
 import { useEffect, useState } from "react";
 import ThreeScene from "../components/threejs/ThreeScene";
 import Card from "../components/Card";
 import MetaDefault from "../components/meta/MetaDefault";
+import Modal from "../components/Modal";
+
 const Home: NextPage = () => {
+
   const [isMobile, setIsMobile] = useState(false);
   // Prevent zoom on mobile
   useEffect(() => {
@@ -55,6 +58,9 @@ const Home: NextPage = () => {
     window.mobileCheck();
   }, []);
 
+  // Modal logic
+  const [modal, setModal] = useState(false);
+
   const blocks = [
     {
       title: "Buy me a coffee",
@@ -63,9 +69,10 @@ const Home: NextPage = () => {
       size: "lg",
     },
     {
-      title: "GitHub",
-      url: "https://github.com/JorgePAJ",
-      icon: faGithubSquare,
+      title: "Contact me",
+      icon: faEnvelopeSquare,
+      size: "lg",
+      setAction: () => setModal(true),
     },
     {
       title: "LinkedIn",
@@ -73,16 +80,17 @@ const Home: NextPage = () => {
       icon: faLinkedin,
     },
     {
-      title: "Twitter",
-      url: "https://twitter.com/JorgePAJ",
-      icon: faTwitterSquare,
+      title: "GitHub",
+      url: "https://github.com/JorgePAJ",
+      icon: faGithubSquare,
     },
   ];
 
   return (
     <div className={` h-screen w-screen overflow-hidden `}>
       <MetaDefault />
-      <Card blocks={blocks} isMobile={isMobile} />
+      <Card blocks={blocks} isMobile={isMobile} modal={modal} />
+      <Modal isOpen={modal} setIsOpen={setModal} />
       <ThreeScene />
     </div>
   );
