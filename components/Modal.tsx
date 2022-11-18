@@ -20,20 +20,26 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
 
   const handleOnSubmit = (e: any) => {
     e.preventDefault();
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
-      (result: any) => {
-        Swal.fire({
-          icon: "success",
-          title: "Your message has been sent!",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      },
-      (error: any) => {
-        console.log(error.text);
-        Swal.fire({ icon: "error", title: "Oops...", text: error.text });
-      }
-    );
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
+      .then(
+        (result: any) => {
+          Swal.fire({
+            icon: "success",
+            title: "Your message has been sent!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          console.log(result.text);
+        },
+        (error: any) => {
+          console.log(error.text);
+          Swal.fire({ icon: "error", title: "Oops...", text: error.text });
+        }
+      )
+      .finally(() => {
+        setIsOpen(false);
+      });
   };
 
   return (
@@ -124,7 +130,6 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
               <div className="flex items-center justify-center mt-4">
                 <button
                   type="submit"
-                  onClick={() => setIsOpen(false)}
                   className=" text-white select-none px-[14px] py-[6px] rounded-md transition-all duration-500 bg-gradient-to-tl to-[#9C89B8] via-[#F0A6CA] from-[#DEC0F1] bg-size-200 bg-pos-0 hover:bg-pos-100"
                 >
                   Send
