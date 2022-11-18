@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import ThreeScene from "../components/threejs/ThreeScene";
 import Card from "../components/Card";
 import MetaDefault from "../components/meta/MetaDefault";
-import Modal from "../components/Modal";
 
 const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
