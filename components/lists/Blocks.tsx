@@ -9,6 +9,7 @@ interface BlocksProps {
     url?: string;
     icon: IconProp;
     size?: "lg";
+    rel?: string;
     setAction?: () => void;
   }[];
   mobile?: boolean;

@@ -13,6 +13,7 @@ interface iCardProps {
   blocks: {
     title: string;
     url?: string;
+    rel?: string;
     icon: IconProp;
     setAction?: () => void;
   }[];
@@ -20,7 +21,6 @@ interface iCardProps {
 
 function Card({ isMobile, blocks, modal, setModal }: iCardProps) {
   const loadingManager = new THREE.LoadingManager();
-  
 
   useEffect(() => {
     const card = document.getElementById("card");

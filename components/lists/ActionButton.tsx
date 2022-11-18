@@ -8,6 +8,7 @@ interface BlocksProps {
     icon: IconProp;
     size?: "lg";
     setAction?: () => void;
+    rel?: string;
   };
   index?: number;
 }
@@ -16,7 +17,7 @@ function ActionButton(props: BlocksProps) {
   return (
     <button
       className={`${
-        props.block.size ? "w-[200]" : "w-[100px]"
+        props.block.size ? "w-[200]" : "w-[125px]"
       } group select-none`}
       key={props.index}
       onClick={() => {
