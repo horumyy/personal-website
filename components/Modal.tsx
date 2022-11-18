@@ -14,6 +14,10 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
   let inputClass =
     "focus:outline-none  border-b placeholder:font-thin font-extralight mb-1";
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "";
   const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "";
   const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID || "";
@@ -21,26 +25,38 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
   const handleOnSubmit = (e: any) => {
     document.querySelector("#submit")?.setAttribute("disabled", "disabled");
     e.preventDefault();
-    emailjs
-      .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
-      .then(
-        (result: any) => {
-          Swal.fire({
-            icon: "success",
-            title: "Your message has been sent!",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          console.log(result.text);
-        },
-        (error: any) => {
-          console.log(error.text);
-          Swal.fire({ icon: "error", title: "Oops...", text: error.text });
-        }
-      )
-      .finally(() => {
-        setIsOpen(false);
+    if (name && email && message) {
+      emailjs
+        .sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
+        .then(
+          (result: any) => {
+            Swal.fire({
+              icon: "success",
+              title: "Your message has been sent!",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            console.log(result.text);
+          },
+          (error: any) => {
+            console.log(error.text);
+            Swal.fire({ icon: "error", title: "Oops...", text: error.text });
+          }
+        )
+        .finally(() => {
+          setIsOpen(false);
+        });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please fill all fields",
+        iconColor: "#e3bfd4",
+        confirmButtonColor: "#e3bfd4",
       });
+      // activate button
+      document.querySelector("#submit")?.removeAttribute("disabled");
+    }
   };
 
   return (
@@ -100,6 +116,7 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
                   ref={firstInputRef}
                   type="text"
                   id="name"
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="My name is..."
                   name="name"
                   className={inputClass}
@@ -112,6 +129,7 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
                 <input
                   type="email"
                   id="email"
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="duser@gmail.com"
                   name="email"
                   className={inputClass}
@@ -124,6 +142,7 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
                 <textarea
                   id="message"
                   name="message"
+                  onChange={(e) => setMessage(e.target.value)}
                   placeholder="Hello, I wanted to tell you that..."
                   className={inputClass}
                 />
