@@ -61,17 +61,21 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
 
   return (
     <div
-      onClick={() => setIsOpen(false)}
       className={`relative z-50  animate-fade-in ${
         isOpen ? "block" : "hidden"
       } `}
+      onClick={() => setIsOpen(false)}
     >
-      <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
-      {/* </Transition.Child> */}
-      <div className="fixed inset-0 overflow-y-auto">
+      <div className="fixed inset-0  bg-black/30" aria-hidden="true" />
+      <div className="fixed  inset-0 z-[60]  overflow-y-auto">
         {/* Container to center the panel */}
         <div className="flex min-h-full items-center justify-center">
-          <div className="max-w-sm rounded-3xl bg-white p-4">
+          <div
+            className="max-w-sm rounded-3xl z-[60] bg-white p-4 "
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
             <div className="select-none text-[1.7rem] text-transparent bg-clip-text bg-gradient-to-br from-pink-200 via-pink-300 to-blue-600 text-center leading-11">
               Send me a message
             </div>
