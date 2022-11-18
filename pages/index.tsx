@@ -12,7 +12,6 @@ import MetaDefault from "../components/meta/MetaDefault";
 import Modal from "../components/Modal";
 
 const Home: NextPage = () => {
-
   const [isMobile, setIsMobile] = useState(false);
   // Prevent zoom on mobile
   useEffect(() => {
@@ -89,8 +88,12 @@ const Home: NextPage = () => {
   return (
     <div className={` h-screen w-screen overflow-hidden `}>
       <MetaDefault />
-      <Card blocks={blocks} isMobile={isMobile} modal={modal} />
-      <Modal isOpen={modal} setIsOpen={setModal} />
+      <Card
+        blocks={blocks}
+        isMobile={isMobile}
+        modal={modal}
+        setModal={setModal}
+      />
       <ThreeScene />
     </div>
   );

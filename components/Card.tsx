@@ -1,13 +1,15 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Blocks from "./lists/Blocks";
 import Avatar from "./threejs/Avatar";
 import { Mixpanel } from "../utils/mixpanel";
 import * as THREE from "three";
+import Modal from "./Modal";
 
 interface iCardProps {
   isMobile: boolean;
   modal: boolean;
+  setModal: (modal: boolean) => void;
   blocks: {
     title: string;
     url?: string;
@@ -16,8 +18,9 @@ interface iCardProps {
   }[];
 }
 
-function Card({ isMobile, blocks, modal }: iCardProps) {
+function Card({ isMobile, blocks, modal, setModal }: iCardProps) {
   const loadingManager = new THREE.LoadingManager();
+  
 
   useEffect(() => {
     const card = document.getElementById("card");
@@ -33,7 +36,7 @@ function Card({ isMobile, blocks, modal }: iCardProps) {
           isMobile
             ? "landscape:flex-row portrait:flex-col"
             : "flex-col opacity-0"
-        } w-[90vw]  sm:w-auto sm:px-4 rounded-3xl shadow items-center`}
+        } w-[90vw] absolute  sm:w-auto sm:px-4 rounded-3xl shadow items-center`}
       >
         <div
           className={`flex flex-col items-center my-4 landscape:mx-4 select-none ${
@@ -68,6 +71,7 @@ function Card({ isMobile, blocks, modal }: iCardProps) {
         </div>
         <Blocks blocks={blocks} mobile={isMobile} />
       </div>
+      <Modal isOpen={modal} setIsOpen={setModal} />
     </div>
   );
 }
