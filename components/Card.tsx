@@ -29,14 +29,14 @@ function Card({ isMobile, blocks, modal, setModal }: iCardProps) {
   }, []);
 
   return (
-    <div className="absolute bg-transparent z-[40] top-0 h-full w-full flex justify-center items-center">
+    <div className="fixed  bg-transparent z-[60] top-0 h-full w-full flex justify-center items-center">
       <div
         id="card"
         className={`transition-all duration-[4000ms]  bg-white flex ${
           isMobile
             ? "landscape:flex-row portrait:flex-col"
             : "flex-col opacity-0"
-        } w-[90vw] absolute  sm:w-auto sm:px-4 rounded-3xl shadow items-center`}
+        } w-[90vw] static  sm:w-auto sm:px-4 rounded-3xl shadow items-center`}
       >
         <div
           className={`flex flex-col items-center my-4 landscape:mx-4 select-none ${
