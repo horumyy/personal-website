@@ -7,14 +7,16 @@ import * as THREE from "three";
 
 interface iCardProps {
   isMobile: boolean;
+  modal: boolean;
   blocks: {
     title: string;
-    url: string;
+    url?: string;
     icon: IconProp;
+    setAction?: () => void;
   }[];
 }
 
-function Card({ isMobile, blocks }: iCardProps) {
+function Card({ isMobile, blocks, modal }: iCardProps) {
   const loadingManager = new THREE.LoadingManager();
 
   useEffect(() => {
@@ -24,7 +26,7 @@ function Card({ isMobile, blocks }: iCardProps) {
   }, []);
 
   return (
-    <div className="absolute bg-transparent z-[100] top-0 h-full w-full flex justify-center items-center">
+    <div className="absolute bg-transparent z-[40] top-0 h-full w-full flex justify-center items-center">
       <div
         id="card"
         className={`transition-all duration-[4000ms]  bg-white flex ${
