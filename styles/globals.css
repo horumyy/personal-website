@@ -10,4 +10,7 @@ html,
 body
 {
     overflow: hidden;
+    position: fixed;
+    margin-top: 0;
+    width: 100%;
 }
