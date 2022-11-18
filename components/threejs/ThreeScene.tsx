@@ -10,6 +10,9 @@ function ThreeScene() {
     canvas?.classList.add("opacity-100");
   }, []);
 
+  const starGeometry = <sphereGeometry args={[0.25, 24, 24]} />;
+  const starMaterial = <meshStandardMaterial color={"white"} />;
+
   return (
     <>
       <Canvas
@@ -18,13 +21,9 @@ function ThreeScene() {
       >
         <ambientLight />
         <OrbitControls autoRotate />
-        <pointLight position={[2, 2, 2]} />
-        <mesh>
-          {/* for cycle from 0 to 250 */}
-          {[...Array(500)].map((_, i) => (
-            <Star key={i} />
-          ))}
-        </mesh>
+        {[...Array(1000)].map((_, i) => (
+          <Star key={i} material={starMaterial} geometry={starGeometry} />
+        ))}
       </Canvas>
     </>
   );

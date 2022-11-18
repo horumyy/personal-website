@@ -34,12 +34,18 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
               title: "Your message has been sent!",
               showConfirmButton: false,
               timer: 1500,
+              width: 250,
             });
             console.log(result.text);
           },
           (error: any) => {
             console.log(error.text);
-            Swal.fire({ icon: "error", title: "Oops...", text: error.text });
+            Swal.fire({
+              width: 250,
+              icon: "error",
+              title: "Oops...",
+              text: error.text,
+            });
           }
         )
         .finally(() => {
@@ -52,6 +58,7 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
         text: "Please fill all fields",
         iconColor: "#e3bfd4",
         confirmButtonColor: "#e3bfd4",
+        width: 250,
       });
       setIsOpen(true);
       // activate button
