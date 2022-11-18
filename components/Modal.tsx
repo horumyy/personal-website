@@ -1,5 +1,4 @@
-import { useRef, useState, Fragment } from "react";
-import { Dialog, Transition } from "@headlessui/react";
+import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 
@@ -54,58 +53,31 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
         iconColor: "#e3bfd4",
         confirmButtonColor: "#e3bfd4",
       });
+      setIsOpen(true);
       // activate button
       document.querySelector("#submit")?.removeAttribute("disabled");
     }
   };
 
   return (
-    // <Transition
-    //   show={isOpen}
-
-    //   enter="transition duration-100 ease-out"
-    //   enterFrom="transform scale-95 opacity-0"
-    //   enterTo="transform scale-100 opacity-100"
-    //   leave="transition duration-75 ease-out"
-    //   leaveFrom="transform scale-100 opacity-100"
-    //   leaveTo="transform scale-95 opacity-0"
-    // >
-    <Dialog
-      open={isOpen}
-      initialFocus={firstInputRef}
-      onClose={() => setIsOpen(false)}
-      className="relative z-50  animate-fade-in"
+    <div
+      onClick={() => setIsOpen(false)}
+      className={`relative z-50  animate-fade-in ${
+        isOpen ? "block" : "hidden"
+      } `}
     >
-      {/* <Transition.Child
-
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        > */}
       <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
       {/* </Transition.Child> */}
       <div className="fixed inset-0 overflow-y-auto">
         {/* Container to center the panel */}
         <div className="flex min-h-full items-center justify-center">
-          {/* <Transition.Child
-
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            > */}
-          <Dialog.Panel className="max-w-sm rounded-3xl bg-white p-4">
-            <Dialog.Title className="select-none text-[1.7rem] text-transparent bg-clip-text bg-gradient-to-br from-pink-200 via-pink-300 to-blue-600 text-center leading-11">
+          <div className="max-w-sm rounded-3xl bg-white p-4">
+            <div className="select-none text-[1.7rem] text-transparent bg-clip-text bg-gradient-to-br from-pink-200 via-pink-300 to-blue-600 text-center leading-11">
               Send me a message
-            </Dialog.Title>
-            <Dialog.Description className="select-none text-xs font-thin mb-5 text-center">
+            </div>
+            <div className="select-none text-xs font-thin mb-5 text-center">
               I'll get back to you as soon as possible.
-            </Dialog.Description>
+            </div>
 
             <form className="flex flex-col gap-1" onSubmit={handleOnSubmit}>
               <div className="flex flex-col">
@@ -157,11 +129,9 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
                 </button>
               </div>
             </form>
-          </Dialog.Panel>
-          {/* </Transition.Child> */}
+          </div>
         </div>
       </div>
-    </Dialog>
-    // </Transition>
+    </div>
   );
 }
