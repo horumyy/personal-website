@@ -49,6 +49,7 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
           }
         )
         .finally(() => {
+          document.querySelector("#submit")?.removeAttribute("disabled");
           setIsOpen(false);
         });
     } else {
