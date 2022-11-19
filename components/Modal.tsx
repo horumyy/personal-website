@@ -102,7 +102,7 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
                   id="name"
                   onChange={(e) => setName(e.target.value)}
                   placeholder="My name is..."
-                  name="name"
+                  name="user_name"
                   className={inputClass}
                 />
               </div>
@@ -115,7 +115,7 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
                   id="email"
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="duser@gmail.com"
-                  name="email"
+                  name="user_email"
                   className={inputClass}
                 />
               </div>
