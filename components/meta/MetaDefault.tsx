@@ -49,7 +49,6 @@ const MetaDefault = () => {
         sizes="16x16"
         href="/favicons/favicon-16x16.png"
       />
-
       <link rel="shortcut icon" href="/favicons/favicon.ico" />
 
       <link rel="manifest" href="/manifest.json" />
