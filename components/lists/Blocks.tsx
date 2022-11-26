@@ -24,9 +24,9 @@ function Blocks(props: BlocksProps) {
     >
       {props.blocks.map((block, index) => {
         if (block.setAction) {
-          return <ActionButton block={block} index={index} />;
+          return <ActionButton block={block} index={index} key={index} />;
         } else {
-          return <SocialButton block={block} index={index} />;
+          return <SocialButton block={block} index={index} key={index} />;
         }
       })}
     </div>
