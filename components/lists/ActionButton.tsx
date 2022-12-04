@@ -25,6 +25,8 @@ function ActionButton(props: BlocksProps) {
       onClick={() => {
         Mixpanel.track(`Block button pressed`, { Block: props.block.title });
         props.block.setAction?.();
+        // TODO : Play audio
+        
       }}
     >
       {props.block.title}
