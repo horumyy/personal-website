@@ -7,6 +7,7 @@ import * as THREE from "three";
 import Modal from "./ContactModal";
 import "98.css";
 
+
 interface iCardProps {
   isMobile: boolean;
   modal: boolean;
