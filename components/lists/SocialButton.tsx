@@ -15,10 +15,9 @@ interface BlocksProps {
 function SocialButton(props: BlocksProps) {
   return (
     <a
-      
       className={`${
         props.block.size ? "w-[200]" : "w-[125px]"
-      } group select-none`}
+      } group select-none cursor-none`}
       href={props.block.url}
       key={props.index}
       target="_blank"

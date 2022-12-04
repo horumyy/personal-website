@@ -9,7 +9,8 @@ interface Props {
 
 export default function Modal({ isOpen, setIsOpen }: Props) {
   let firstInputRef = useRef(null);
-  let labelClass = "font-thin text-sm";
+  let labelClass = "select-none cursor-none font-thin text-sm";
+
   let inputClass =
     "focus:outline-none  border-b placeholder:font-thin font-extralight mb-1";
 
@@ -135,7 +136,7 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
                 <button
                   id="submit"
                   type="submit"
-                  className=" text-white select-none px-[14px] py-[6px] rounded-md transition-all duration-500 bg-gradient-to-tl to-[#9C89B8] via-[#F0A6CA] from-[#DEC0F1] bg-size-200 bg-pos-0 hover:bg-pos-100"
+                  className="cursor-none text-white select-none px-[14px] py-[6px] rounded-md transition-all duration-500 bg-gradient-to-tl to-[#9C89B8] via-[#F0A6CA] from-[#DEC0F1] bg-size-200 bg-pos-0 hover:bg-pos-100"
                 >
                   Send
                 </button>

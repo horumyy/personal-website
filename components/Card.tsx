@@ -29,7 +29,7 @@ function Card({ isMobile, blocks, modal, setModal }: iCardProps) {
   }, []);
 
   return (
-    <div className="fixed  bg-transparent z-[60] top-0 h-full w-full flex justify-center items-center">
+    <div className="fixed  bg-transparent z-40 top-0 h-full w-full flex justify-center items-center">
       <div
         id="card"
         className={`transition-all duration-[4000ms]  bg-white flex ${
@@ -59,7 +59,7 @@ function Card({ isMobile, blocks, modal, setModal }: iCardProps) {
           </span>
           <a
             id="translate-element"
-            className="text-white select-none px-[14px] py-[6px] rounded-md transition-all duration-500 bg-gradient-to-tl to-[#9C89B8] via-[#F0A6CA] from-[#DEC0F1] bg-size-200 bg-pos-0 hover:bg-pos-100"
+            className="cursor-none text-white select-none px-[14px] py-[6px] rounded-md transition-all duration-500 bg-gradient-to-tl to-[#9C89B8] via-[#F0A6CA] from-[#DEC0F1] bg-size-200 bg-pos-0 hover:bg-pos-100"
             href={"/CV_Jorge_Plasencia.pdf"}
             download="CV_JorgePlasencia.pdf"
             onClick={() => {

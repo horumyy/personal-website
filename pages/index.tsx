@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import ThreeScene from "../components/threejs/ThreeScene";
 import Card from "../components/Card";
 import MetaDefault from "../components/meta/MetaDefault";
+import MouseTrail from "../components/MouseTrail";
+import MouseCursor from "../components/Mouse";
 
 const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -32,6 +34,8 @@ const Home: NextPage = () => {
       document.body.style.zoom = 1;
     });
   }, []);
+
+  // Mouse trail
 
   // Detect mobile
   useEffect(() => {
@@ -93,6 +97,8 @@ const Home: NextPage = () => {
 
   return (
     <div className={` h-screen w-screen overflow `}>
+      {!isMobile && <MouseCursor />}
+      {!isMobile && <MouseTrail />}
       <MetaDefault />
       <Card
         blocks={blocks}
