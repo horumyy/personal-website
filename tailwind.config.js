@@ -33,10 +33,19 @@ module.exports = {
             opacity: 0,
           },
         },
+        "rotate-forever": {
+          "0%": {
+            transform: "rotate(0deg)",
+          },
+          "100%": {
+            transform: "rotate(360deg)",
+          },
+        },
       },
       animation: {
         "fade-in": "fade-in 1s ease",
         "fade-out": "fade-out 1s ease",
+        "rotate-infinite": "rotate-forever 2s linear infinite",
       },
     },
   },

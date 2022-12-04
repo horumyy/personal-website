@@ -29,7 +29,7 @@ function Card({ isMobile, blocks, modal, setModal }: iCardProps) {
   }, []);
 
   return (
-    <div className="fixed  bg-transparent z-[60] top-0 h-full w-full flex justify-center items-center">
+    <div className="fixed  bg-transparent z-40 top-0 h-full w-full flex justify-center items-center">
       <div
         id="card"
         className={`transition-all duration-[4000ms]  bg-white flex ${
