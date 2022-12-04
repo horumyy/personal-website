@@ -17,14 +17,14 @@ function Avatar(props: iAvatarProps) {
 
   function MoveCamera() {
     useFrame(({ camera }) => {
-      camera.position.z = 30;
+      camera.position.z = 2;
       camera.lookAt(avatarRef.current!.position);
     });
     return null;
   }
   useEffect(() => {
     if (isMobile) {
-      console.log("Asdads");
+      console.log("Mobile");
     } else {
       window.addEventListener("mousemove", (event) => {
         if (avatarRef.current != null) {

@@ -2,14 +2,16 @@ import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const Gltf = () => {
+  const gltf = useLoader(GLTFLoader, "/assets/computer.glb");
 
-  const gltf = useLoader(
-    GLTFLoader,
-    "https://supra-bucket-test.s3.amazonaws.com/others/Totoro.glb"
-  );
-  gltf.scene.position.set(0, -10, 0);
+  // rotate the model
+  // gltf.scene.rotation.y = -(Math.PI );
+  // Scale up the model
+  gltf.scene.scale.set(2.5, 2.5, 2.5);
 
-  return <primitive object={gltf.scene} />
-}
+  gltf.scene.position.set(0, -0.6, 0);
 
-export default Gltf
+  return <primitive object={gltf.scene} />;
+};
+
+export default Gltf;
