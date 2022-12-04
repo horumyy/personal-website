@@ -26,7 +26,7 @@ function SocialButton(props: BlocksProps) {
         Mixpanel.track(`Block button pressed`, { Block: props.block.title });
       }}
     >
-      <button className=" text-black">{props.block.title}</button>
+      <button className="cursor-none select-none text-black">{props.block.title}</button>
     </a>
   );
 }

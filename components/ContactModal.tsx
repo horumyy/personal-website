@@ -11,7 +11,7 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
   let firstInputRef = useRef(null);
   let labelClass = "select-none cursor-none";
 
-  let inputClass = "mb-1";
+  let inputClass = "cursor-none mb-1";
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -86,11 +86,16 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
               <div className="title-bar-text">send me a message</div>
               <div className="title-bar-controls">
                 <button
+                  className="cursor-none"
                   aria-label="Minimize"
                   onClick={() => setIsOpen(false)}
                 />
-                <button aria-label="Maximize" />
-                <button aria-label="Close" onClick={() => setIsOpen(false)} />
+                <button aria-label="Maximize" className="cursor-none" />
+                <button
+                  aria-label="Close"
+                  onClick={() => setIsOpen(false)}
+                  className="cursor-none"
+                />
               </div>
             </div>
 

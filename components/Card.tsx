@@ -53,9 +53,9 @@ function Card({ isMobile, blocks, modal, setModal }: iCardProps) {
         <div className="title-bar w-full" id="titlebar">
           <div className="title-bar-text">https://horuhe.dev</div>
           <div className="title-bar-controls">
-            <button aria-label="Minimize" />
-            <button aria-label="Maximize" />
-            <button aria-label="Close" />
+            <button aria-label="Minimize" className="cursor-none" />
+            <button aria-label="Maximize" className="cursor-none" />
+            <button aria-label="Close" className="cursor-none" />
           </div>
         </div>
 
