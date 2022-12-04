@@ -20,11 +20,11 @@ function MouseTrail() {
   }
 
   function drawCircles() {
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 30; i++) {
       trailRefs.current.push(React.createRef());
     }
 
-    return [...Array(20)].map((item, index) => {
+    return [...Array(30)].map((item, index) => {
       const ease = index * 0.04;
       return (
         <div
@@ -32,7 +32,7 @@ function MouseTrail() {
           style={{ position: "absolute", transition: `transform ${ease}s` }}
           ref={trailRefs.current[index]}
         >
-          <div className="flex flex-col animate-rotate-infinite">
+          <div className="flex text-[8px] flex-col animate-rotate-infinite">
             <span className={``}>🌟💖</span>
             <span>💖✨</span>
           </div>
@@ -42,7 +42,7 @@ function MouseTrail() {
   }
 
   function updateCollectedLettersPosition() {
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 30; i++) {
       const xpos = lastMousePosition.current.x;
       const ypos = lastMousePosition.current.y;
       trailRefs.current[
@@ -74,7 +74,15 @@ function MouseTrail() {
     };
   }, [isDragging]);
 
-  return <>{drawCircles()}</>;
+  return (
+    <div
+      style={{
+        pointerEvents: "none",
+      }}
+    >
+      {drawCircles()}
+    </div>
+  );
 }
 
 export default MouseTrail;

@@ -18,7 +18,7 @@ function ActionButton(props: BlocksProps) {
     <button
       className={`${
         props.block.size ? "w-[200]" : "w-[125px]"
-      } group select-none`}
+      } group select-none cursor-none`}
       key={props.index}
       onClick={() => {
         Mixpanel.track(`Block button pressed`, { Block: props.block.title });
