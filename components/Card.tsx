@@ -4,7 +4,7 @@ import Blocks from "./lists/Blocks";
 import Avatar from "./threejs/Avatar";
 import { Mixpanel } from "../utils/mixpanel";
 import * as THREE from "three";
-import Modal from "./Modal";
+import Modal from "./ContactModal";
 
 interface iCardProps {
   isMobile: boolean;
