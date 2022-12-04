@@ -17,7 +17,7 @@ function SocialButton(props: BlocksProps) {
     <a
       className={`${
         props.block.size ? "w-[200]" : "w-[125px]"
-      } group select-none cursor-none`}
+      } group select-none `}
       href={props.block.url}
       key={props.index}
       target="_blank"
@@ -26,7 +26,7 @@ function SocialButton(props: BlocksProps) {
         Mixpanel.track(`Block button pressed`, { Block: props.block.title });
       }}
     >
-      <div className="flex transition-all duration-500 group-hover:transform group-hover:translate-y-[-.2rem]">
+      <div className="flex transition-all duration-500 group-hover:transform group-hover:translate-y-[-.2rem] cursor-pointer">
         <div className="flex items-center rounded-l-md p-1 border-l border-t border-b group-hover:bg-gray-50 transition-all duration-350">
           <FontAwesomeIcon
             icon={props.block.icon}

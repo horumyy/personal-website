@@ -18,14 +18,14 @@ function ActionButton(props: BlocksProps) {
     <button
       className={`${
         props.block.size ? "w-[200]" : "w-[125px]"
-      } group select-none cursor-none`}
+      } group select-none `}
       key={props.index}
       onClick={() => {
         Mixpanel.track(`Block button pressed`, { Block: props.block.title });
         props.block.setAction?.();
       }}
     >
-      <div className="flex transition-all duration-500 group-hover:transform group-hover:translate-y-[-.2rem]">
+      <div className="flex transition-all duration-500 group-hover:transform group-hover:translate-y-[-.2rem] cursor-pointer">
         <div className="flex items-center rounded-l-md p-1 border-l border-t border-b group-hover:bg-gray-50 transition-all duration-350">
           <FontAwesomeIcon
             icon={props.block.icon}

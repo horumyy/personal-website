@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "Monocraft";
+    src: url("/assets/fonts/Monocraft.otf");
+}
+
 body {
     background: #d4d4d4;
 }
@@ -12,5 +17,4 @@ body
     overflow: hidden;
     margin-top: 0;
     width: 100%;
-    cursor: none;
 }

@@ -47,6 +47,9 @@ module.exports = {
         "fade-out": "fade-out 1s ease",
         "rotate-infinite": "rotate-forever 2s linear infinite",
       },
+      fontFamily: {
+        monoc: ["Monocraft", "monospace"],
+      }
     },
   },
   plugins: [],
