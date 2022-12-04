@@ -9,10 +9,10 @@ interface Props {
 
 export default function Modal({ isOpen, setIsOpen }: Props) {
   let firstInputRef = useRef(null);
-  let labelClass = "select-none cursor-none font-thin text-sm";
+  let labelClass = "select-none cursor-none";
 
   let inputClass =
-    "focus:outline-none  border-b placeholder:font-thin font-extralight mb-1";
+    "mb-1";
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
