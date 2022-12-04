@@ -8,7 +8,7 @@ interface BoxProps {
   material?: JSX.Element;
 }
 
-function Star(props: BoxProps) {
+function Box(props: BoxProps) {
   const boxRef = useRef<Mesh>(null);
 
   useFrame(() => {
@@ -38,4 +38,4 @@ function Star(props: BoxProps) {
   );
 }
 
-export default Star;
+export default Box;

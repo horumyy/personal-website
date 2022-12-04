@@ -1,6 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Star from "./Star";
+import Box from "./Boxes";
 import { useEffect } from "react";
 
 function ThreeScene() {
@@ -10,8 +10,8 @@ function ThreeScene() {
     canvas?.classList.add("opacity-100");
   }, []);
 
-  const starGeometry = <sphereGeometry args={[0.25, 24, 24]} />;
-  const starMaterial = <meshStandardMaterial color={"white"} />;
+  const boxGeometry = <boxBufferGeometry args={[.5, .5, .5]} />;
+  const boxMaterial = <meshStandardMaterial color={"white"} />;
 
   return (
     <>
@@ -21,8 +21,8 @@ function ThreeScene() {
       >
         <ambientLight />
         <OrbitControls autoRotate />
-        {[...Array(1000)].map((_, i) => (
-          <Star key={i} material={starMaterial} geometry={starGeometry} />
+        {[...Array(800)].map((_, i) => (
+          <Box key={i} material={boxMaterial} geometry={boxGeometry} />
         ))}
       </Canvas>
     </>
