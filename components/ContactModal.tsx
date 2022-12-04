@@ -10,6 +10,7 @@ interface Props {
 export default function Modal({ isOpen, setIsOpen }: Props) {
   let firstInputRef = useRef(null);
   let labelClass = "select-none cursor-none font-thin text-sm";
+
   let inputClass =
     "focus:outline-none  border-b placeholder:font-thin font-extralight mb-1";
 
