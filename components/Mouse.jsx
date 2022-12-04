@@ -15,7 +15,7 @@ function Mouse() {
     <div
       style={{
         left: `${x - 5}px`,
-        top: `${y - 15}px`,
+        top: `${y }px`,
         position: "absolute",
         zIndex: "100",
         pointerEvents: "none",

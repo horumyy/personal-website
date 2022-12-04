@@ -70,9 +70,7 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
 
   return (
     <div
-      className={`relative z-50  animate-fade-in ${
-        isOpen ? "block" : "hidden"
-      } `}
+      className={`relative z-50  ${isOpen ? "block" : "hidden"} `}
       onClick={() => setIsOpen(false)}
     >
       <div className="fixed inset-0  bg-black/30" aria-hidden="true" />
@@ -80,68 +78,72 @@ export default function Modal({ isOpen, setIsOpen }: Props) {
         {/* Container to center the panel */}
         <div className="flex min-h-full items-center justify-center">
           <div
-            className="max-w-sm rounded-3xl z-[60] bg-white p-4 "
+            className="max-w-sm  z-[60]  p-4 window"
             onClick={(e) => {
               e.stopPropagation();
             }}
           >
-            <div className="select-none text-[1.7rem] text-transparent bg-clip-text bg-gradient-to-br from-pink-200 via-pink-300 to-blue-600 text-center leading-11">
-              Send me a message
-            </div>
-            <div className="select-none text-xs font-thin mb-5 text-center">
-              I'll get back to you as soon as possible.
+            <div className="title-bar w-full" id="titlebarModal">
+              <div className="title-bar-text">send me a message</div>
+              <div className="title-bar-controls">
+                <button aria-label="Minimize" />
+                <button aria-label="Maximize" />
+                <button aria-label="Close" />
+              </div>
             </div>
 
-            <form className="flex flex-col gap-1" onSubmit={handleOnSubmit}>
-              <div className="flex flex-col">
-                <label htmlFor="name" className={labelClass}>
-                  Name
-                </label>
-                <input
-                  ref={firstInputRef}
-                  type="text"
-                  id="name"
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="My name is..."
-                  name="user_name"
-                  className={inputClass}
-                />
-              </div>
-              <div className="flex flex-col">
-                <label htmlFor="email" className={labelClass}>
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="duser@gmail.com"
-                  name="user_email"
-                  className={inputClass}
-                />
-              </div>
-              <div className="flex flex-col">
-                <label htmlFor="message" className={labelClass}>
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Hello, I wanted to tell you that..."
-                  className={inputClass}
-                />
-              </div>
-              <div className="flex items-center justify-center mt-4">
-                <button
-                  id="submit"
-                  type="submit"
-                  className="cursor-none text-white select-none px-[14px] py-[6px] rounded-md transition-all duration-500 bg-gradient-to-tl to-[#9C89B8] via-[#F0A6CA] from-[#DEC0F1] bg-size-200 bg-pos-0 hover:bg-pos-100"
-                >
-                  Send
-                </button>
-              </div>
-            </form>
+            <div className="window-body">
+              <form className="flex flex-col gap-1" onSubmit={handleOnSubmit}>
+                <div className="flex flex-col">
+                  <label htmlFor="name" className={labelClass}>
+                    Name
+                  </label>
+                  <input
+                    ref={firstInputRef}
+                    type="text"
+                    id="name"
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="My name is..."
+                    name="user_name"
+                    className={inputClass}
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label htmlFor="email" className={labelClass}>
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="duser@gmail.com"
+                    name="user_email"
+                    className={inputClass}
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <label htmlFor="message" className={labelClass}>
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Hello, I wanted to tell you that..."
+                    className={inputClass}
+                  />
+                </div>
+                <div className="flex items-center justify-center mt-4">
+                  <button
+                    id="submit"
+                    type="submit"
+                    className="cursor-none text-white select-none px-[14px] py-[6px]  transition-all duration-500 bg-gradient-to-tl to-[#9C89B8] via-[#F0A6CA] from-[#DEC0F1] bg-size-200 bg-pos-0 hover:bg-pos-100"
+                  >
+                    Send
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

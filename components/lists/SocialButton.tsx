@@ -17,7 +17,7 @@ function SocialButton(props: BlocksProps) {
     <a
       className={`${
         props.block.size ? "w-[200]" : "w-[125px]"
-      } group select-none cursor-none`}
+      } group select-none cursor-none w-full items-center text-center justify-center flex`}
       href={props.block.url}
       key={props.index}
       target="_blank"
@@ -26,23 +26,7 @@ function SocialButton(props: BlocksProps) {
         Mixpanel.track(`Block button pressed`, { Block: props.block.title });
       }}
     >
-      <div className="flex transition-all duration-500 group-hover:transform group-hover:translate-y-[-.2rem]">
-        <div className="flex items-center rounded-l-md p-1 border-l border-t border-b group-hover:bg-gray-50 transition-all duration-350">
-          <FontAwesomeIcon
-            icon={props.block.icon}
-            className="h-[25px] text-hotpink"
-          />
-        </div>
-        <div className="select-none flex-grow text-center border-l-2 rounded-r-md border-r border-t border-b group-hover:bg-gray-100 transition-all duration-350">
-          <div
-            className={`select-none flex-grow-0 text-gray-800 text-center py-1 font-thin ${
-              props.block.size && "px-1"
-            }`}
-          >
-            <h4 className="select-none">{props.block.title}</h4>
-          </div>
-        </div>
-      </div>
+      <button className=" text-black">{props.block.title}</button>
     </a>
   );
 }
