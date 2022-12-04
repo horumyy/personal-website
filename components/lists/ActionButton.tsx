@@ -16,6 +16,11 @@ interface BlocksProps {
 }
 
 function ActionButton(props: BlocksProps) {
+  function playAudio() {
+    const audio = new Audio("/audio/clack.mp3");
+    audio.play();
+  }
+
   return (
     <button
       className={`${
@@ -26,7 +31,7 @@ function ActionButton(props: BlocksProps) {
         Mixpanel.track(`Block button pressed`, { Block: props.block.title });
         props.block.setAction?.();
         // TODO : Play audio
-        
+        playAudio();
       }}
     >
       {props.block.title}
