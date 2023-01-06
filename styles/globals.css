@@ -7,8 +7,7 @@ body {
 }
 
 html,
-body
-{
+body {
     overflow: hidden;
     margin-top: 0;
     width: 100%;
