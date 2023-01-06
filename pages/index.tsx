@@ -11,6 +11,7 @@ import ThreeScene from "../components/threejs/ThreeScene";
 import Card from "../components/Card";
 import MetaDefault from "../components/meta/MetaDefault";
 import NewButton from "../components/buttons/NewButton";
+import Modal from "../components/ContactModal";
 
 const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -33,8 +34,6 @@ const Home: NextPage = () => {
       document.body.style.zoom = 1;
     });
   }, []);
-
-  // Mouse trail
 
   // Detect mobile
   useEffect(() => {
@@ -76,6 +75,11 @@ const Home: NextPage = () => {
       setAction: () => setModal(true),
     },
     {
+      title: "GitHub",
+      url: "https://github.com/JorgePAJ",
+      icon: faGithubSquare,
+    },
+    {
       title: "LinkedIn",
       url: "https://www.linkedin.com/in/jorgeplasenciaa/",
       icon: faLinkedin,
@@ -86,23 +90,14 @@ const Home: NextPage = () => {
       icon: faMastodon,
       rel: "me",
     },
-    {
-      title: "GitHub",
-      url: "https://github.com/JorgePAJ",
-      icon: faGithubSquare,
-    },
   ];
 
   return (
     <div className={`h-screen w-screen`}>
       <NewButton />
       <MetaDefault />
-      <Card
-        blocks={blocks}
-        isMobile={isMobile}
-        modal={modal}
-        setModal={setModal}
-      />
+      <Modal isOpen={modal} setIsOpen={setModal} />
+      <Card blocks={blocks} isMobile={isMobile} />
       <ThreeScene />
     </div>
   );

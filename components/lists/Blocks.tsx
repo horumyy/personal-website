@@ -1,6 +1,5 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import ActionButton from "./ActionButton";
-
 import SocialButton from "./SocialButton";
 
 interface BlocksProps {
