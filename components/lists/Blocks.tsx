@@ -1,35 +1,39 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import ActionButton from "./ActionButton";
-import SocialButton from "./SocialButton";
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import ActionButton from './ActionButton';
+import SocialButton from './SocialButton';
 
 interface BlocksProps {
-  blocks: {
-    title: string;
-    url?: string;
-    icon: IconProp;
-    size?: "lg";
-    rel?: string;
-    setAction?: () => void;
-  }[];
-  mobile?: boolean;
+    blocks: {
+        title: string;
+        url?: string;
+        icon: IconProp;
+        size?: 'lg';
+        rel?: string;
+        setAction?: () => void;
+    }[];
+    mobile?: boolean;
 }
 
 function Blocks(props: BlocksProps) {
-  return (
-    <div
-      className={`flex items-center flex-col gap-[8px] landscape:gap-[16px] my-[16px]  ${
-        props.mobile && "mx-4"
-      }`}
-    >
-      {props.blocks.map((block, index) => {
-        if (block.setAction) {
-          return <ActionButton block={block} index={index} key={index} />;
-        } else {
-          return <SocialButton block={block} index={index} key={index} />;
-        }
-      })}
-    </div>
-  );
+    return (
+        <div
+            className={`flex items-center flex-col gap-[8px] landscape:gap-[16px] my-[16px]  ${
+                props.mobile && 'mx-4'
+            }`}
+        >
+            {props.blocks.map((block, index) => {
+                if (block.setAction) {
+                    return (
+                        <ActionButton block={block} index={index} key={index} />
+                    );
+                } else {
+                    return (
+                        <SocialButton block={block} index={index} key={index} />
+                    );
+                }
+            })}
+        </div>
+    );
 }
 
 export default Blocks;

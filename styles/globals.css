@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "Monocraft";
-    src: url("/assets/fonts/Monocraft.otf");
+    font-family: 'Monocraft';
+    src: url('/assets/fonts/Monocraft.otf');
 }
 
 body {
@@ -12,8 +12,7 @@ body {
 }
 
 html,
-body
-{
+body {
     overflow: hidden;
     margin-top: 0;
     width: 100%;
