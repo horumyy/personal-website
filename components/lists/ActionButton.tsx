@@ -28,7 +28,7 @@ function ActionButton(props: BlocksProps) {
       } group select-none cursor-none`}
       key={props.index}
       onClick={() => {
-        Mixpanel.track(`Block button pressed`, { Block: props.block.title });
+        Mixpanel.track(`Retro:Block button pressed`, { Block: props.block.title });
         props.block.setAction?.();
         // TODO : Play audio
         playAudio();

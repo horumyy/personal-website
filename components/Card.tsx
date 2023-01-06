@@ -101,7 +101,7 @@ function Card({ isMobile, blocks, modal, setModal }: iCardProps) {
                 href={"/CV_Jorge_Plasencia.pdf"}
                 download="CV_JorgePlasencia.pdf"
                 onClick={() => {
-                  Mixpanel.track("Download CV");
+                  Mixpanel.track("Retro:Download CV");
                 }}
               >
                 <button className="cursor-none text-white select-none px-[14px] py-[6px]  transition-all duration-500 bg-gradient-to-tl to-[#9C89B8] via-[#F0A6CA] from-[#DEC0F1] bg-size-200 bg-pos-0 hover:bg-pos-100">

@@ -23,7 +23,7 @@ function SocialButton(props: BlocksProps) {
       target="_blank"
       rel={props.block.rel}
       onClick={() => {
-        Mixpanel.track(`Block button pressed`, { Block: props.block.title });
+        Mixpanel.track(`Retro:Block button pressed`, { Block: props.block.title });
       }}
     >
       <button className="cursor-none select-none text-black">{props.block.title}</button>
