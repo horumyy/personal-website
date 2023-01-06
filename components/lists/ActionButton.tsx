@@ -32,7 +32,6 @@ function ActionButton(props: BlocksProps) {
                     Block: props.block.title,
                 });
                 props.block.setAction?.();
-                // TODO : Play audio
                 playAudio();
             }}
         >

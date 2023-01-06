@@ -15,9 +15,7 @@
         "jsx": "preserve",
         "incremental": true,
         "types": ["./node_modules/user-agent-data-types"],
-        "typeRoots": ["./node_modules/@types", "./src/types"],
-        "noUnusedLocals": true,
-        "noUnusedParameters": true
+        "typeRoots": ["./node_modules/@types", "./src/types"]
     },
     "include": [
         "next-env.d.ts",
