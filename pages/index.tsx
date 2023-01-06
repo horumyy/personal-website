@@ -12,6 +12,7 @@ import Card from "../components/Card";
 import MetaDefault from "../components/meta/MetaDefault";
 import MouseTrail from "../components/MouseTrail";
 import MouseCursor from "../components/Mouse";
+import Modal from "../components/ContactModal";
 
 const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -100,11 +101,10 @@ const Home: NextPage = () => {
       {!isMobile && <MouseCursor />}
       {!isMobile && <MouseTrail />}
       <MetaDefault />
+      <Modal isOpen={modal} setIsOpen={setModal} />
       <Card
         blocks={blocks}
         isMobile={isMobile}
-        modal={modal}
-        setModal={setModal}
       />
       <ThreeScene />
     </div>

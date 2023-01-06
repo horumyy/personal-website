@@ -9,8 +9,6 @@ import "98.css";
 
 interface iCardProps {
   isMobile: boolean;
-  modal: boolean;
-  setModal: (modal: boolean) => void;
   blocks: {
     title: string;
     url?: string;
@@ -20,7 +18,7 @@ interface iCardProps {
   }[];
 }
 
-function Card({ isMobile, blocks, modal, setModal }: iCardProps) {
+function Card({ isMobile, blocks }: iCardProps) {
   const loadingManager = new THREE.LoadingManager();
 
   useEffect(() => {
@@ -114,7 +112,6 @@ function Card({ isMobile, blocks, modal, setModal }: iCardProps) {
           </div>
         </div>
       </div>
-      <Modal isOpen={modal} setIsOpen={setModal} />
     </div>
   );
 }
