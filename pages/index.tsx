@@ -10,8 +10,6 @@ import { useEffect, useState } from "react";
 import ThreeScene from "../components/threejs/ThreeScene";
 import Card from "../components/Card";
 import MetaDefault from "../components/meta/MetaDefault";
-import MouseTrail from "../components/MouseTrail";
-import MouseCursor from "../components/Mouse";
 import NewButton from "../components/buttons/NewButton";
 
 const Home: NextPage = () => {
@@ -75,7 +73,6 @@ const Home: NextPage = () => {
     {
       title: "Contact me",
       icon: faEnvelopeSquare,
-
       setAction: () => setModal(true),
     },
     {
@@ -97,7 +94,7 @@ const Home: NextPage = () => {
   ];
 
   return (
-    <div className={` h-screen w-screen overflow `}>
+    <div className={`h-screen w-screen`}>
       <NewButton />
       <MetaDefault />
       <Card
