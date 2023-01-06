@@ -63,7 +63,7 @@ const Home: NextPage = () => {
 
   // Modal logic
   const [modal, setModal] = useState(false);
-
+  // Blocks with social links and actions
   const blocks = [
     {
       title: "Buy me a coffee",
