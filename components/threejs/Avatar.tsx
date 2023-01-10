@@ -30,8 +30,7 @@ function Avatar(props: iAvatarProps) {
         if (avatarRef.current != null) {
           avatarRef.current!.rotation.y =
             event.clientX / window.innerWidth - 0.5;
-          avatarRef.current!.rotation.x =
-            event.clientY / window.innerHeight - 0.5;
+          avatarRef.current!.rotation.x = event.clientY / window.innerHeight;
 
           avatarRef.current!.position.x =
             (event.clientX / window.innerWidth - 0.5) * 3;
