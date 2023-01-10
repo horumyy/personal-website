@@ -1,29 +1,26 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
-        "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "jsx": "preserve",
-        "incremental": true,
-        "types": ["./node_modules/user-agent-data-types"],
-        "typeRoots": ["./node_modules/@types", "./src/types"]
-    },
-    "include": [
-        "next-env.d.ts",
-        "**/*.ts",
-        "**/*.tsx",
-        "pages/api/my-sitemap.js",
-        "components/threejs/Dino.js",
-        "components/MouseTrail.jsx"
-    ],
-    "exclude": ["node_modules"]
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "types": [
+      "./node_modules/user-agent-data-types"
+     ],
+    "typeRoots": ["./node_modules/@types", "./src/types"]
+
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/my-sitemap.js", "components/threejs/Dino.js", "components/MouseTrail.jsx"],
+  "exclude": ["node_modules"],
+  
 }
