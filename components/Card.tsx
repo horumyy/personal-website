@@ -6,6 +6,7 @@ import { Mixpanel } from "../utils/mixpanel";
 import * as THREE from "three";
 import Modal from "./ContactModal";
 
+
 interface iCardProps {
   isMobile: boolean;
   modal: boolean;
