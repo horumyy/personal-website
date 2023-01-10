@@ -1,10 +1,10 @@
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Suspense, useEffect, useRef } from 'react';
-import { Mesh } from 'three';
-import { isMobile } from 'react-device-detect';
-import dynamic from 'next/dynamic';
 import { Html } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
+import dynamic from 'next/dynamic';
+import { Suspense, useEffect, useRef } from 'react';
+import { isMobile } from 'react-device-detect';
 import RingLoader from 'react-spinners/RingLoader';
+import { Mesh } from 'three';
 
 const Gltf = dynamic(() => import('../Gltf'), { ssr: false });
 
@@ -31,7 +31,7 @@ function Avatar(props: iAvatarProps) {
                     avatarRef.current!.rotation.y =
                         event.clientX / window.innerWidth - 0.5;
                     avatarRef.current!.rotation.x =
-                        event.clientY / window.innerHeight - 0.5;
+                        event.clientY / window.innerHeight;
 
                     avatarRef.current!.position.x =
                         (event.clientX / window.innerWidth - 0.5) * 3;
