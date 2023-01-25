@@ -8,8 +8,6 @@ import Modal from "./ContactModal";
 
 interface iCardProps {
   isMobile: boolean;
-  modal: boolean;
-  setModal: (modal: boolean) => void;
   blocks: {
     title: string;
     url?: string;
@@ -19,7 +17,7 @@ interface iCardProps {
   }[];
 }
 
-function Card({ isMobile, blocks, modal, setModal }: iCardProps) {
+function Card({ isMobile, blocks }: iCardProps) {
   const loadingManager = new THREE.LoadingManager();
 
   useEffect(() => {
@@ -71,7 +69,6 @@ function Card({ isMobile, blocks, modal, setModal }: iCardProps) {
         </div>
         <Blocks blocks={blocks} mobile={isMobile} />
       </div>
-      <Modal isOpen={modal} setIsOpen={setModal} />
     </div>
   );
 }

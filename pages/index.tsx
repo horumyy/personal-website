@@ -11,6 +11,7 @@ import ThreeScene from "../components/threejs/ThreeScene";
 import Card from "../components/Card";
 import MetaDefault from "../components/meta/MetaDefault";
 import NewButton from "../components/buttons/NewButton";
+import Modal from "../components/ContactModal";
 
 const Home: NextPage = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -97,12 +98,8 @@ const Home: NextPage = () => {
     <div className={` h-screen w-screen overflow `}>
       <NewButton />
       <MetaDefault />
-      <Card
-        blocks={blocks}
-        isMobile={isMobile}
-        modal={modal}
-        setModal={setModal}
-      />
+      <Modal isOpen={modal} setIsOpen={setModal} />
+      <Card blocks={blocks} isMobile={isMobile} />
       <ThreeScene />
     </div>
   );
