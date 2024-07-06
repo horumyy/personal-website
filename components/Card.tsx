@@ -94,8 +94,7 @@ function Card({ isMobile, blocks }: iCardProps) {
                             <a
                                 id="translate-element"
                                 className="cursor-none text-[#dc98c0] select-none px-[14px] py-[6px] rounded-md transition-all duration-500 "
-                                href={'/CV_Jorge_Plasencia.pdf'}
-                                download="CV_JorgePlasencia.pdf"
+                                href={'https://horumy.dev/CV_Jorge_Plasencia.pdf'}
                                 onClick={() => {
                                     Mixpanel.track('Retro:Download CV');
                                 }}

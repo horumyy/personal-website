@@ -91,7 +91,7 @@ const Home: NextPage = () => {
         },
         {
             title: 'GitHub',
-            url: 'https://github.com/JorgePAJ',
+            url: 'https://github.com/horumyy',
             icon: faGithubSquare,
         },
     ];
